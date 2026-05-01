@@ -19,18 +19,19 @@ export function EchoText({ text, className = '', count = 5, offsetStep = 0.04 }:
       {Array.from({ length: count - 1 }).map((_, i) => {
         const offset = -(i + 1) * offsetStep;
         return (
-          <motion.span
+          <span
             key={i}
             className="echo-layer"
             style={{
               color: colors[i] || colors[colors.length - 1],
               transform: `translate(${offset}em, ${offset}em)`,
               zIndex: -1 - i,
+              willChange: 'transform'
             }}
             aria-hidden="true"
           >
             {text}
-          </motion.span>
+          </span>
         );
       })}
       

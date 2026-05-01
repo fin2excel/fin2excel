@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useScroll, useTransform } from "motion/react"
 
 const pillars = [
@@ -54,6 +54,11 @@ const LinePath = ({
 };
 
 export function PhilosophySection() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-100px" })
   const { scrollYProgress } = useScroll({
@@ -62,7 +67,7 @@ export function PhilosophySection() {
   })
 
   return (
-    <section ref={ref} className="relative py-12 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden min-h-[100vh]">
+    <section ref={ref} className={`relative py-12 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden min-h-[100vh] transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       
 
 
@@ -72,7 +77,7 @@ export function PhilosophySection() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="text-6xl md:text-8xl font-display leading-[0.9] tracking-tighter uppercase mb-6">
+        <h2 className="text-4xl md:text-8xl font-display leading-[0.9] tracking-tighter uppercase mb-6">
           The Stroke <br /> 
           <span className="italic text-swiss-blue">That follows</span> <br />
           the Scroll.

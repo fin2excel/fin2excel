@@ -4,7 +4,7 @@ import { motion, MotionValue, useTransform } from "motion/react"
 import Image from "next/image"
 import { EchoText } from "@/components/echo-text"
 import { Globe } from "@/components/cobe-globe"
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 interface HeroSectionProps {
   globeOpacity: MotionValue<number>
@@ -14,13 +14,18 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSectionProps) {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const rightCardY = useTransform(globeY, [0, 100], [0, -200])
   const rightCardRotate = useTransform(globeY, [0, 100], [3, -5])
   const leftCardY = useTransform(globeY, [0, 100], [0, 100])
   const leftCardRotate = useTransform(globeY, [0, 100], [-6, 2])
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-0 px-6 overflow-hidden">
+    <section className={`relative min-h-screen flex flex-col items-center justify-center pt-32 pb-0 px-6 overflow-hidden transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       {/* Floating Image Card */}
       <motion.div 
         initial={{ opacity: 0, x: 100, rotate: 10 }}
@@ -28,10 +33,11 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
         transition={{ delay: 1.2, duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
         style={{ 
           y: rightCardY,
-          rotate: rightCardRotate
+          rotate: rightCardRotate,
+          willChange: 'transform'
         }}
         // Pushed further right and up to avoid text overlapping
-        className="absolute -right-4 md:-right-10 lg:right-[-2rem] top-[5%] md:top-[8%] z-20 hidden xl:block w-48 md:w-56"
+        className="absolute -right-4 md:-right-10 lg:right-[2rem] xl:right-[-2rem] top-[5%] md:top-[8%] z-20 hidden lg:block w-48 md:w-56"
       >
         <div className="bg-white p-4 shadow-2xl rounded-sm border border-swiss-black/5 hover:scale-105 transition-all duration-700">
           <div className="relative aspect-[3/4] overflow-hidden transition-all duration-700">
@@ -40,6 +46,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
               alt="Legacy Wealth" 
               fill 
               sizes="(max-width: 768px) 100vw, 256px"
+              priority
               className="object-cover"
             />
           </div>
@@ -57,10 +64,11 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
         transition={{ delay: 1.5, duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
         style={{ 
           y: leftCardY,
-          rotate: leftCardRotate
+          rotate: leftCardRotate,
+          willChange: 'transform'
         }}
         // Pushed further left and down
-        className="absolute -left-4 md:left-[2%] bottom-[5%] md:bottom-[10%] z-20 hidden lg:block w-40 md:w-48"
+        className="absolute -left-4 md:left-[2%] lg:left-[4%] xl:left-[2%] bottom-[5%] md:bottom-[10%] z-20 hidden lg:block w-40 md:w-48"
       >
         <div className="bg-white p-3 shadow-xl rounded-sm border border-swiss-black/5 hover:scale-105 transition-all duration-700">
           <div className="relative aspect-square overflow-hidden transition-all duration-700">
@@ -81,7 +89,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
       <motion.div style={{ y: textY }} className="relative z-10 text-center flex flex-col items-center">
         <EchoText 
           text="FIN2EXCEL" 
-          className="text-[15vw] md:text-[180px] font-display font-bold leading-[0.8]"
+          className="text-[20vw] md:text-[180px] font-display font-bold leading-[0.8]"
         />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

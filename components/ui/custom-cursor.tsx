@@ -52,8 +52,8 @@ export function CustomCursor() {
     };
 
     updateListeners();
-    // Re-run periodically to catch dynamic elements
-    const interval = setInterval(updateListeners, 2000);
+    // Re-run occasionally to catch dynamic elements
+    const interval = setInterval(updateListeners, 5000);
 
     animate();
 

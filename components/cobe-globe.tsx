@@ -55,7 +55,7 @@ export function Globe({
   speed = 0.003,
   theta = 0.3,
   diffuse = 1.2,
-  mapSamples = 8000, // Optimized for performance
+  mapSamples = 6000, // Reduced from 8000 for smoother performance on most GPUs
   scale = 1.1,
 }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -211,6 +211,7 @@ export function Globe({
         ref={canvasRef}
         onPointerDown={handlePointerDown}
         className="globe-canvas"
+        style={{ willChange: 'transform', transform: 'translateZ(0)' }}
       />
     </div>
   )

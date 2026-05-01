@@ -5,6 +5,7 @@ import { Footer } from "@/components/sections/Footer"
 import SmoothScroll from "@/components/ui/smooth-scroll"
 import { CustomCursor } from "@/components/ui/custom-cursor"
 import { ScrollProgress } from "@/components/ui/scroll-progress"
+import { FloatingContact } from "@/components/ui/FloatingContact"
 
 export const metadata: Metadata = {
   title: 'Fin2Excel | Private Financial Concierge for HNI & NRI Families',
@@ -46,6 +47,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             {children}
           </main>
           <Footer />
+          <FloatingContact />
         </SmoothScroll>
       </body>
     </html>

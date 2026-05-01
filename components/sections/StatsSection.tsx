@@ -47,12 +47,17 @@ function AnimatedCounter({ value, prefix = "", suffix, inView }: { value: number
 }
 
 export function StatsSection() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <div ref={ref} className="py-24 border-b border-swiss-black/5 bg-transparent">
-      <dl className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-10">
+    <div ref={ref} className={`py-16 md:py-24 border-b border-swiss-black/5 bg-transparent transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+      <dl className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 lg:grid-cols-4 gap-y-12 md:gap-y-16 gap-x-6 md:gap-x-10">
         {stats.map((stat, i) => (
           <motion.div 
             key={i} 

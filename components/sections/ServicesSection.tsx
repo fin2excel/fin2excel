@@ -71,6 +71,19 @@ const AnimatedHeader = () => {
 
 // --- Main Component ---
 export function ServicesSection({ services }: ServicesSectionProps) {
+  const [mounted, setMounted] = useState(false)
+  const [stickyOffset, setStickyOffset] = useState(120)
+
+  useEffect(() => {
+    setMounted(true)
+    const handleResize = () => {
+      setStickyOffset(window.innerWidth < 768 ? 80 : 120)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   // Define subtle variations in background colors to enhance the stacking effect
   const cardBgColors = [
     "bg-[#FAFAFA]",
@@ -80,7 +93,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   ]
 
   return (
-    <div className="bg-swiss-bg font-sans relative z-10">
+    <div className={`bg-swiss-bg font-sans relative z-10 transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
           {/* The main section for the features */}
@@ -93,11 +106,8 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  // The sticky class makes the card stick to the top of the container.
-                  // By adding a small calc(200px + index * 20px) we create a staggered card stack.
-                  // But as per the prompt's simplicity, we can also use top-32 etc.
                   className={`${cardBgColors[index % cardBgColors.length]} border border-swiss-black/5 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16 p-8 md:p-12 lg:p-16 rounded-3xl mb-16 sticky`}
-                  style={{ top: `calc(120px + ${index * 20}px)` }}
+                  style={{ top: `calc(${stickyOffset}px + ${index * 20}px)` }}
                 >
                   {/* Card Content */}
                   <div className="flex flex-col justify-center">
