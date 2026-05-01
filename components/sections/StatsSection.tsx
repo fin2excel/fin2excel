@@ -51,20 +51,20 @@ export function StatsSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <div ref={ref} className="py-16 border-b border-swiss-black/5 bg-transparent">
-      <dl className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4 gap-10">
+    <div ref={ref} className="py-24 border-b border-swiss-black/5 bg-transparent">
+      <dl className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-10">
         {stats.map((stat, i) => (
           <motion.div 
             key={i} 
-            className="space-y-3 group"
+            className="flex flex-col items-center text-center space-y-4 group"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-bold group-hover:text-swiss-black transition-colors duration-500">
+            <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-bold group-hover:text-swiss-blue transition-colors duration-500">
               {stat.label}
             </dt>
-            <dd className="text-4xl md:text-6xl font-display font-bold tracking-tighter">
+            <dd className="text-4xl md:text-6xl font-display font-bold tracking-tight text-swiss-black">
               <AnimatedCounter 
                 value={stat.value} 
                 prefix={stat.prefix} 
@@ -72,7 +72,7 @@ export function StatsSection() {
                 inView={inView}
               />
             </dd>
-            <div className="w-8 h-[1px] bg-swiss-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="w-8 h-[1.5px] bg-swiss-blue/30 group-hover:w-16 group-hover:bg-swiss-blue transition-all duration-700 ease-out" />
           </motion.div>
         ))}
       </dl>
