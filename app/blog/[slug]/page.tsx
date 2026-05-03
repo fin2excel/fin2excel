@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { fetchAPI } from '@/lib/strapi'
 import { JsonLd } from '@/components/ui/JsonLd'
+import { BlocksRenderer } from '@strapi/blocks-react-renderer'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 // Fallback data
 const fallbackPosts: Record<string, any> = {
@@ -198,10 +201,15 @@ export default async function BlogPostPage({ params }: PageProps) {
           <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
         </div>
 
-        <div 
-          className="prose prose-lg max-w-none font-sans text-swiss-black/90 leading-[1.8] space-y-6"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <div className="prose prose-lg max-w-none font-sans text-swiss-black/90 leading-[1.8] space-y-6 blog-content">
+          {Array.isArray(post.content) ? (
+            <BlocksRenderer content={post.content} />
+          ) : (
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.content}
+            </ReactMarkdown>
+          )}
+        </div>
 
         <footer className="mt-24 pt-12 border-t border-swiss-black/10">
           <div className="flex items-center justify-between">
