@@ -36,8 +36,8 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
           rotate: rightCardRotate,
           willChange: 'transform'
         }}
-        // Pushed further right and up to avoid text overlapping
-        className="absolute -right-4 md:-right-10 lg:right-[2rem] xl:right-[-2rem] top-[5%] md:top-[8%] z-20 hidden lg:block w-48 md:w-56"
+        // Pushed further right and slightly scaled down for small laptop clearance
+        className="absolute -right-4 md:-right-10 lg:-right-16 xl:right-[-2rem] 2xl:right-[-4rem] top-[5%] md:top-[8%] z-10 hidden lg:block w-44 md:w-56"
       >
         <div className="bg-white p-4 shadow-2xl rounded-sm border border-swiss-black/5 hover:scale-105 transition-all duration-700">
           <div className="relative aspect-[3/4] overflow-hidden transition-all duration-700">
@@ -67,8 +67,8 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
           rotate: leftCardRotate,
           willChange: 'transform'
         }}
-        // Pushed further left and down
-        className="absolute -left-4 md:left-[2%] lg:left-[4%] xl:left-[2%] bottom-[5%] md:bottom-[10%] z-20 hidden lg:block w-40 md:w-48"
+        // Pushed further left and slightly scaled down
+        className="absolute -left-4 md:-left-10 lg:-left-16 xl:left-[2%] 2xl:left-[4%] bottom-[5%] md:bottom-[10%] z-10 hidden lg:block w-36 md:w-48"
       >
         <div className="bg-white p-3 shadow-xl rounded-sm border border-swiss-black/5 hover:scale-105 transition-all duration-700">
           <div className="relative aspect-square overflow-hidden transition-all duration-700">
@@ -86,7 +86,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
         </div>
       </motion.div>
 
-      <motion.div style={{ y: textY }} className="relative z-10 text-center flex flex-col items-center">
+      <motion.div style={{ y: textY }} className="relative z-20 text-center flex flex-col items-center">
         <EchoText 
           text="FIN2EXCEL" 
           className="text-7xl md:text-9xl lg:text-[11rem] xl:text-[13rem] font-display font-bold leading-[0.8]"
