@@ -29,7 +29,7 @@ export function FloatingContact() {
         x: scrolled ? 0 : 20,
         pointerEvents: scrolled ? "auto" : "none"
       }}
-      className="fixed bottom-8 right-6 md:right-10 z-[90] flex flex-col gap-4"
+      className="fixed bottom-8 right-6 md:right-10 z-[90] flex flex-col gap-4 transform-gpu will-change-transform"
     >
       {/* Call Button */}
       <a

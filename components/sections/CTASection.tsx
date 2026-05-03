@@ -8,7 +8,7 @@ export function CTASection() {
   const inView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="relative py-20 md:py-24 px-6 md:px-10 text-swiss-bg overflow-hidden min-h-[70vh] flex items-center">
+    <section ref={ref} className="relative py-20 md:py-24 px-6 md:px-10 text-swiss-bg overflow-hidden min-h-[70vh] flex items-center transform-gpu will-change-transform">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -84,7 +84,7 @@ export function CTASection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
-          <button className="group relative px-14 py-6 bg-transparent border border-swiss-blue/40 text-swiss-bg rounded-sm text-xs font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-swiss-blue backdrop-blur-sm">
+          <button className="group relative px-14 py-6 bg-transparent border border-swiss-blue/40 text-swiss-bg rounded-sm text-xs font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-swiss-blue backdrop-blur-sm transform-gpu">
             <span className="relative z-10 group-hover:text-swiss-black transition-colors duration-500">
               Start Your Journey
             </span>

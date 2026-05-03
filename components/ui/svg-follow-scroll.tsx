@@ -54,7 +54,7 @@ const Skiper19 = () => {
           >
             {/* Content Side */}
             <div className={`flex-1 flex flex-col ${i % 2 !== 0 ? "md:items-start md:text-left" : "md:items-end md:text-right"} items-center text-center`}>
-              <div className="bg-swiss-bg/90 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.03)] border border-swiss-black/5 max-w-lg hover:border-swiss-blue/30 transition-colors duration-500 relative group overflow-hidden">
+              <div className="bg-swiss-bg/90 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.03)] border border-swiss-black/5 max-w-lg hover:border-swiss-blue/30 transition-colors duration-500 relative group overflow-hidden transform-gpu will-change-transform">
                 <div className="absolute top-0 left-0 w-1 h-full bg-swiss-blue transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out" />
                 <span className="text-xl font-display font-bold text-swiss-blue mb-4 block">{step.number}</span>
                 <h3 className="text-4xl md:text-5xl uppercase font-bold tracking-tighter mb-4">
@@ -112,6 +112,7 @@ const LinePath = ({
         strokeLinejoin="round"
         style={{
           pathLength,
+          willChange: "stroke-dasharray, stroke-dashoffset"
         }}
       />
     </svg>
