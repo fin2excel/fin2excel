@@ -23,7 +23,7 @@ export default function ServicesPage() {
         "Portfolio Management Services (PMS)",
         "Fixed Income Strategies"
       ],
-      img: "/assets/hero-office.png",
+      img: "/assets/service-wealth.png",
       color: "#0066FF"
     },
     {
@@ -37,7 +37,7 @@ export default function ServicesPage() {
         "Succession Management",
         "Regulatory Compliance"
       ],
-      img: "/assets/global-network.png",
+      img: "/assets/service-legal.png",
       color: "#111111"
     },
     {
@@ -51,7 +51,7 @@ export default function ServicesPage() {
         "Legal Verification",
         "Valuation Services"
       ],
-      img: "/assets/hero-office.png",
+      img: "/assets/service-property.png",
       color: "#0066FF"
     },
     {
@@ -65,7 +65,7 @@ export default function ServicesPage() {
         "Emergency Assistance",
         "Wellness Oversight"
       ],
-      img: "/assets/global-network.png",
+      img: "/assets/service-elder.png",
       color: "#111111"
     }
   ]
