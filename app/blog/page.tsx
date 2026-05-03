@@ -1,4 +1,4 @@
-import { fetchAPI } from "@/lib/strapi"
+import { fetchAPI, getStrapiMedia } from "@/lib/strapi"
 import BlogList from "./BlogList"
 
 // Fallback data in case Strapi is unavailable
