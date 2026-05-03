@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { fetchAPI } from '@/lib/strapi'
+import { fetchAPI, getStrapiMedia } from '@/lib/strapi'
 import { JsonLd } from '@/components/ui/JsonLd'
 import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import ReactMarkdown from 'react-markdown'
@@ -83,9 +83,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: seo?.metaTitle || article.title,
         description: seo?.metaDescription || article.excerpt,
         keywords: seo?.keywords,
-        image: seo?.metaImage?.url 
-          ? `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337'}${seo.metaImage.url}`
-          : (article.cover?.url ? `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337'}${article.cover.url}` : '/assets/hero-office.png'),
+        image: getStrapiMedia(article.seo?.metaImage?.url) || getStrapiMedia(article.cover?.url) || '/assets/hero-office.png',
         author: { name: article.author?.name || 'Fin2Excel Team' },
         robots: seo?.metaRobots || 'index, follow',
         canonical: seo?.canonicalURL || `https://fin2excel.com/blog/${resolvedParams.slug}`
@@ -138,11 +136,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         category: article.category?.name || "Wealth Strategy",
         date: new Date(article.publishedAt || article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
         readTime: `${article.readTime || 8} min read`,
-        image: article.cover?.url ? `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337'}${article.cover.url}` : '/assets/hero-office.png',
+        image: getStrapiMedia(article.cover?.url) || '/assets/hero-office.png',
         author: {
           name: article.author?.name || "Fin2Excel Team",
           role: article.author?.role || "Contributor",
-          avatar: article.author?.avatar?.url ? `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337'}${article.author.avatar.url}` : '/assets/logo.png'
+          avatar: getStrapiMedia(article.author?.avatar?.url) || '/assets/logo.png'
         }
       };
     }

@@ -88,7 +88,7 @@ export default async function BlogPage() {
         date: new Date(article.publishedAt || article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
         readTime: `${article.readTime || 5} min read`,
         author: article.author?.name || "Fin2Excel Team",
-        img: article.cover?.url ? `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://127.0.0.1:1337'}${article.cover.url}` : null,
+        img: getStrapiMedia(article.cover?.url),
         featured: article.featured || false
       }));
     }
