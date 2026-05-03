@@ -65,8 +65,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const res = await fetchAPI({ 
       endpoint: 'articles', 
       query: { 
-        filters: { slug: { $eq: resolvedParams.slug } },
-        populate: '*'
+        'filters[slug][$eq]': resolvedParams.slug,
+        'populate': '*'
       } 
     });
     
@@ -112,8 +112,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     const res = await fetchAPI({ 
       endpoint: 'articles', 
       query: { 
-        filters: { slug: { $eq: resolvedParams.slug } },
-        populate: '*'
+        'filters[slug][$eq]': resolvedParams.slug,
+        'populate': '*'
       } 
     });
     

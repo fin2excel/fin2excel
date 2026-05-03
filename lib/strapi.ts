@@ -7,7 +7,7 @@ const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
 interface FetchParams {
   endpoint: string;
-  query?: Record<string, string>;
+  query?: Record<string, any>;
   options?: RequestInit;
 }
 
