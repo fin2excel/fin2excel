@@ -12,6 +12,7 @@ import { CTASection } from "@/components/sections/CTASection"
 import { PhilosophySection } from "@/components/sections/PhilosophySection"
 import { ServicesSection } from "@/components/sections/ServicesSection"
 import { ProcessSection } from "@/components/sections/ProcessSection"
+import { Skiper19 } from "@/components/ui/svg-follow-scroll"
 import { ParallaxTransition } from "@/components/sections/ParallaxTransition"
 import { Preloader } from "@/components/ui/preloader"
 import { Globe } from "@/components/cobe-globe"
@@ -121,7 +122,7 @@ export default function LandingPage() {
           <PhilosophySection />
         </div>
 
-        <ProcessSection />
+        <Skiper19 />
 
         <div id="services">
           <ServicesSection services={services} />
