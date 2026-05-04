@@ -126,9 +126,13 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       {service.desc}
                     </p>
 
-                    <button className="flex items-center justify-center gap-4 text-[10px] font-bold tracking-[0.4em] uppercase py-4 px-8 border border-swiss-black hover:bg-swiss-black hover:text-white transition-all duration-300 w-fit">
-                      <span>Explore</span>
-                    </button>
+                    <a 
+                      href="/services"
+                      className="group relative flex items-center justify-center gap-4 text-[10px] font-bold tracking-[0.4em] uppercase py-4 px-8 border border-swiss-black rounded-sm overflow-hidden transition-all duration-500 w-fit"
+                    >
+                      <span className="relative z-10 group-hover:text-white transition-colors duration-500">Explore</span>
+                      <div className="absolute inset-0 bg-swiss-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    </a>
                   </div>
                   
                   {/* Card Image */}

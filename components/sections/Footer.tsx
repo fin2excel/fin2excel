@@ -145,7 +145,7 @@ export function Footer() {
               </a>
               <p className="text-white/20 pt-2">
                 E-578, Greater Kailash II,<br />
-                New Delhi-110070
+                New Delhi-110070, India
               </p>
             </div>
           </div>

@@ -83,13 +83,17 @@ export function CTASection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
+          className="flex justify-center"
         >
-          <button className="group relative px-14 py-6 bg-transparent border border-swiss-blue/40 text-swiss-bg rounded-sm text-xs font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-swiss-blue backdrop-blur-sm">
-            <span className="relative z-10 group-hover:text-swiss-black transition-colors duration-500">
+          <a 
+            href="/contact"
+            className="group relative px-14 py-6 bg-transparent border border-swiss-blue/40 text-swiss-bg rounded-sm text-xs font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-swiss-blue backdrop-blur-sm block w-fit"
+          >
+            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
               Start Your Journey
             </span>
             <div className="absolute inset-0 bg-swiss-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-          </button>
+          </a>
         </motion.div>
 
         {/* Trust indicators */}

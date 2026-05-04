@@ -103,10 +103,27 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
           transition={{ delay: 1, duration: 1 }}
-          className="mt-6 text-[11px] md:text-sm max-w-md mx-auto uppercase tracking-widest leading-relaxed"
+          className="mt-6 text-[11px] md:text-sm max-w-md mx-auto uppercase tracking-widest leading-relaxed mb-10"
         >
           We handle everything. From Indian assets to global family sanctuaries.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3, duration: 0.8 }}
+          className="flex justify-center"
+        >
+          <a 
+            href="/contact"
+            className="group relative px-12 py-5 bg-swiss-black text-swiss-bg rounded-sm text-[10px] font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-swiss-blue/20 inline-block w-fit"
+          >
+            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+              Initiate Journey
+            </span>
+            <div className="absolute inset-0 bg-swiss-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   )

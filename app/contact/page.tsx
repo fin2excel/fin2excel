@@ -77,7 +77,7 @@ export default function ContactPage() {
                       <div className="w-2 h-2 mt-1.5 rounded-full border border-swiss-blue group-hover:bg-swiss-blue transition-colors" />
                       <span className="text-sm font-bold uppercase tracking-widest leading-relaxed">
                         E-578, Greater Kailash II, <br />
-                        <span className="text-swiss-dark-gray/40 font-normal">New Delhi-110070</span>
+                        <span className="text-swiss-dark-gray/40 font-normal">New Delhi-110070, India</span>
                       </span>
                     </div>
                   </div>

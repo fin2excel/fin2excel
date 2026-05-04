@@ -40,7 +40,7 @@ export default function AboutPage() {
               <div className="lg:col-span-4 flex flex-col gap-6 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase border-l border-swiss-black/10 pl-10 h-fit">
                 <div className="space-y-2">
                   <span className="text-swiss-blue block">Headquarters</span>
-                  <span className="leading-relaxed opacity-60">E-578, Greater Kailash II,<br />New Delhi-110070</span>
+                  <span className="leading-relaxed opacity-60">E-578, Greater Kailash II,<br />New Delhi-110070, India</span>
                 </div>
                 <div className="space-y-2">
                   <span className="text-swiss-blue block">Founded</span>

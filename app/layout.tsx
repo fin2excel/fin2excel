@@ -50,7 +50,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             "streetAddress": "E-578, Greater Kailash II",
             "addressLocality": "New Delhi",
             "postalCode": "110070",
-            "addressCountry": "IN"
+            "addressCountry": "India"
           },
           "telephone": "+91-95607-59494"
         }} />
