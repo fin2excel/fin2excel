@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react"
 import { motion, useInView } from "motion/react"
+import { useIsClient } from "@/hooks/use-is-client"
 import Globe from "@/components/ui/globe"
 
 const audiences = [
@@ -23,16 +24,13 @@ const audiences = [
 ]
 
 export function AudienceSection() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const isClient = useIsClient()
 
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className={`py-16 md:py-20 px-6 md:px-10 relative transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <section ref={ref} className={`py-16 md:py-20 px-6 md:px-10 relative transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
       <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[50vw] bg-white -z-10 hidden lg:block rounded-l-3xl shadow-sm" />
       {/* On mobile, leave the top 300px transparent so the globe shows through, cover the rest with white */}
       <div className="absolute top-[300px] left-0 right-0 bottom-0 bg-white -z-20 lg:hidden rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.05)]" />

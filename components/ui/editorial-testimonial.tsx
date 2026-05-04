@@ -153,7 +153,7 @@ export default function TestimonialsEditorial() {
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-2xl md:text-4xl font-serif italic leading-tight text-swiss-black tracking-tight"
               >
-                "{current.quote}"
+                &ldquo;{current.quote}&rdquo;
               </motion.blockquote>
             </AnimatePresence>
           </div>

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { fetchAPI, getStrapiMedia } from '@/lib/strapi'
 import { JsonLd } from '@/components/ui/JsonLd'
@@ -180,7 +181,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="flex items-center justify-between py-8 border-y border-swiss-black/5">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full overflow-hidden bg-swiss-blue/10 flex items-center justify-center">
-                <img src={post.author.avatar} alt={post.author.name} className="w-8 h-8 object-contain" />
+                <Image src={post.author.avatar} alt={post.author.name} width={32} height={32} className="object-contain" />
               </div>
               <div>
                 <div className="font-bold text-sm uppercase tracking-tight">{post.author.name}</div>
@@ -193,8 +194,15 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </header>
 
-        <div className="aspect-video w-full mb-16 overflow-hidden rounded-sm">
-          <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+        <div className="aspect-video w-full mb-16 overflow-hidden rounded-sm relative">
+          <Image 
+            src={post.image} 
+            alt={post.title} 
+            fill
+            className="object-cover" 
+            sizes="(max-width: 800px) 100vw, 800px"
+            priority
+          />
         </div>
 
         <div className="prose prose-lg max-w-none font-serif text-swiss-black/90 leading-[1.8] space-y-6 blog-content">
@@ -230,7 +238,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           <div className="mt-20 p-10 bg-swiss-bg border border-swiss-black/5 rounded-sm flex flex-col md:flex-row items-center gap-8">
             <div className="w-24 h-24 rounded-full overflow-hidden bg-swiss-blue/10 flex items-center justify-center shrink-0">
-              <img src={post.author.avatar} alt={post.author.name} className="w-16 h-16 object-contain" />
+              <Image src={post.author.avatar} alt={post.author.name} width={64} height={64} className="object-contain" />
             </div>
             <div className="text-center md:text-left">
               <h4 className="text-xl font-display font-bold uppercase mb-2">Written by {post.author.name}</h4>

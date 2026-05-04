@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { getStrapiMedia } from "@/lib/strapi"
+import { useIsClient } from "@/hooks/use-is-client"
 
 export default function BlogList({ posts }: { posts: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All")
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const isClient = useIsClient()
 
   // Extract unique categories from posts, default to ["All"]
   const fetchedCategories = Array.from(new Set(posts.map(p => p.category)))
@@ -27,13 +26,13 @@ export default function BlogList({ posts }: { posts: any[] }) {
           <div className="flex justify-between items-center text-[10px] tracking-[0.3em] uppercase font-bold border-b border-swiss-black/10 pb-4 mb-8">
             <span>Volume IV • Issue No. 24</span>
             <span className="hidden md:block">Greater Kailash II • New Delhi</span>
-            <span>{mounted ? new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : ""}</span>
+            <span>{isClient ? new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : ""}</span>
           </div>
           <h1 className="text-[12vw] md:text-[8vw] leading-none font-display font-black uppercase tracking-tighter mb-4">
             The Insights.
           </h1>
           <p className="text-sm md:text-lg text-swiss-dark-gray max-w-2xl mx-auto italic font-serif">
-            "The definitive record of global wealth, Indian residency, and the strategic pursuit of excellence."
+            &ldquo;The definitive record of global wealth, Indian residency, and the strategic pursuit of excellence.&rdquo;
           </p>
         </header>
 
@@ -62,10 +61,12 @@ export default function BlogList({ posts }: { posts: any[] }) {
             {filteredPosts.filter(p => p.featured).map(post => (
               <Link key={post.id} href={`/blog/${post.slug}`} className="group block border-b border-swiss-black/10 pb-12">
                 <div className="aspect-[16/9] overflow-hidden mb-8 relative">
-                  <img 
+                  <Image 
                     src={post.img || '/assets/hero-office.png'} 
                     alt={post.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0" 
+                    fill
+                    className="object-cover group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0" 
+                    sizes="(max-width: 768px) 100vw, 66vw"
                   />
                   <div className="absolute top-6 left-6 bg-swiss-blue text-swiss-black px-4 py-1 text-[10px] font-bold uppercase tracking-widest">
                     Top Story
@@ -97,11 +98,13 @@ export default function BlogList({ posts }: { posts: any[] }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {filteredPosts.filter(p => !p.featured).slice(0, 2).map(post => (
                 <Link key={post.id} href={`/blog/${post.slug}`} className="group block border-b border-swiss-black/10 pb-8 lg:border-b-0 lg:pb-0">
-                  <div className="aspect-[4/3] overflow-hidden mb-6">
-                    <img 
+                  <div className="aspect-[4/3] overflow-hidden mb-6 relative">
+                    <Image 
                       src={post.img || '/assets/global-network.png'} 
                       alt={post.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <span className="text-[10px] tracking-[0.3em] uppercase text-swiss-blue font-bold mb-3 block">{post.category}</span>
@@ -160,7 +163,7 @@ export default function BlogList({ posts }: { posts: any[] }) {
 
             {/* Legal Quote */}
             <div className="border-l-2 border-swiss-blue pl-6 py-4 italic text-sm text-swiss-dark-gray font-serif">
-              "In wealth management, as in architecture, the beauty lies in the precision of the foundation."
+              &ldquo;In wealth management, as in architecture, the beauty lies in the precision of the foundation.&rdquo;
             </div>
           </aside>
         </div>

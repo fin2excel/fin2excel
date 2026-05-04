@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
+import { useIsClient } from "@/hooks/use-is-client"
 
 const steps = [
   {
@@ -22,10 +23,7 @@ const steps = [
 ]
 
 export function ProcessSection() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const isClient = useIsClient()
 
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -37,7 +35,7 @@ export function ProcessSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0])
 
   return (
-    <section ref={containerRef} className={`py-24 px-6 relative bg-swiss-bg overflow-hidden transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <section ref={containerRef} className={`py-24 px-6 relative bg-swiss-bg overflow-hidden transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24">
           <p className="text-[10px] tracking-[0.6em] uppercase font-bold text-swiss-blue mb-4">The Lifecycle</p>

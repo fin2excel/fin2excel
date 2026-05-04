@@ -2,13 +2,13 @@
 
 import { motion } from "motion/react"
 import { useEffect, useState } from "react"
+import { useIsClient } from "@/hooks/use-is-client"
 
 export function FloatingContact() {
-  const [mounted, setMounted] = useState(false)
+  const isClient = useIsClient()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
     const handleScroll = () => {
       setScrolled(window.scrollY > 200)
     }
@@ -16,7 +16,7 @@ export function FloatingContact() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  if (!mounted) return null
+  if (!isClient) return null
 
   const whatsappNumber = "919560759494"
   const phoneNumber = "919560759494"

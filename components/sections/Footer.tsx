@@ -158,7 +158,27 @@ export function Footer() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>© {new Date().getFullYear()} FIN2EXCEL PRIVATE ADVISORY. ALL RIGHTS RESERVED.</p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p>© {new Date().getFullYear()} FIN2EXCEL PRIVATE ADVISORY. ALL RIGHTS RESERVED.</p>
+            <div className="hidden md:block w-px h-3 bg-white/10" />
+            <a 
+              href="https://vistar.tech" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 group hover:text-white transition-colors duration-300"
+            >
+              <span className="text-[8px] tracking-[0.2em]">DEVELOPED BY</span>
+              <div className="relative w-4 h-4 overflow-hidden rounded-[2px] transition-transform duration-300 group-hover:scale-110">
+                <Image 
+                  src="/assets/vistar-logo.svg" 
+                  alt="vistar.tech logo" 
+                  fill 
+                  className="object-contain"
+                />
+              </div>
+              <span className="font-bold tracking-widest text-[9px]">VISTAR.TECH</span>
+            </a>
+          </div>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors duration-300">Privacy</Link>
             <Link href="#" className="hover:text-white transition-colors duration-300">Regulatory</Link>

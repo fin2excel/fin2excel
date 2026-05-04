@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
+import Image from "next/image"
 
 export default function AboutPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -109,10 +110,12 @@ export default function AboutPage() {
               className="relative aspect-[4/5] overflow-hidden group shadow-xl bg-white p-2"
             >
               <div className="w-full h-full overflow-hidden relative">
-                <img 
+                <Image 
                   src="/assets/founder.png" 
                   alt="Adv. Jag Mohan Kapoor - Founder of Fin2Excel" 
-                  className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-swiss-black/5 mix-blend-multiply transition-opacity duration-1000 group-hover:opacity-0" />
               </div>
@@ -141,7 +144,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-8 text-lg md:text-xl text-swiss-dark-gray leading-relaxed font-sans font-medium">
                 <p>
-                  "We understand that our clients often manage their Indian interests from thousands of miles away. That is why we prioritize being more than just consultants—we are your trusted executors on the ground."
+                  &ldquo;We understand that our clients often manage their Indian interests from thousands of miles away. That is why we prioritize being more than just consultants—we are your trusted executors on the ground.&rdquo;
                 </p>
                 <p className="text-base text-swiss-dark-gray/60 font-normal">
                   Fin2Excel was built to provide the Indian diaspora with a single, reliable point of contact for legal, financial, and administrative needs, ensuring that distance never compromises excellence.

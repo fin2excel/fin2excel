@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "motion/react"
+import Image from "next/image"
 
 export default function ContactPage() {
   const [formState, setFormState] = useState("idle") // idle, sending, success, error
@@ -156,10 +157,12 @@ export default function ContactPage() {
 
             {/* Decorative Image/Element */}
             <div className="relative aspect-video overflow-hidden rounded-sm grayscale hover:grayscale-0 transition-all duration-1000 group">
-              <img 
+              <Image 
                 src="/assets/hero-office.png" 
                 alt="Fin2Excel Office" 
-                className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                fill
+                className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-swiss-blue/10 mix-blend-overlay" />
             </div>

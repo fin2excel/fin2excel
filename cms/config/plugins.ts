@@ -1,4 +1,4 @@
-export default ({ env }: { env: any }) => ({
+const plugins = ({ env }: { env: any }) => ({
   // Temporarily disabled to fix provider.init crash
   upload: {
     config: {
@@ -15,3 +15,5 @@ export default ({ env }: { env: any }) => ({
     },
   },
 });
+
+export default plugins;

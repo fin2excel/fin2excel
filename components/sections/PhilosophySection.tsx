@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useScroll, useTransform } from "motion/react"
+import { useIsClient } from "@/hooks/use-is-client"
 
 const pillars = [
   {
@@ -54,10 +55,7 @@ const LinePath = ({
 };
 
 export function PhilosophySection() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const isClient = useIsClient()
 
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-100px" })
@@ -67,7 +65,7 @@ export function PhilosophySection() {
   })
 
   return (
-    <section ref={ref} className={`relative py-12 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden min-h-[100vh] transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <section ref={ref} className={`relative py-12 px-6 md:px-10 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden min-h-[100vh] transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
       
 
 

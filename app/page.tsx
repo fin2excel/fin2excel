@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform, useMotionTemplate } from "motion/react"
+import { useIsClient } from "@/hooks/use-is-client"
 
 // Component Imports
 import { HeroSection } from "@/components/sections/HeroSection"
@@ -18,15 +19,18 @@ import { Preloader } from "@/components/ui/preloader"
 import { Globe } from "@/components/cobe-globe"
 
 export default function LandingPage() {
-  const [mounted, setMounted] = useState(false)
+  const mounted = useIsClient()
   const [isDesktop, setIsDesktop] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
   
   useEffect(() => {
-    setMounted(true)
-    setIsDesktop(window.innerWidth >= 768)
+    // Only run on client
     const handleResize = () => setIsDesktop(window.innerWidth >= 768)
+    
+    // Set initial value
+    handleResize()
+    
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])

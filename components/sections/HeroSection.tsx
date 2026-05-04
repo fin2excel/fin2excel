@@ -5,6 +5,7 @@ import Image from "next/image"
 import { EchoText } from "@/components/echo-text"
 import { Globe } from "@/components/cobe-globe"
 import React, { useEffect, useState } from "react"
+import { useIsClient } from "@/hooks/use-is-client"
 
 interface HeroSectionProps {
   globeOpacity: MotionValue<number>
@@ -14,10 +15,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSectionProps) {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const isClient = useIsClient()
 
   const rightCardY = useTransform(globeY, [0, 100], [0, -200])
   const rightCardRotate = useTransform(globeY, [0, 100], [3, -5])
@@ -25,7 +23,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
   const leftCardRotate = useTransform(globeY, [0, 100], [-6, 2])
 
   return (
-    <section className={`relative min-h-screen flex flex-col items-center justify-center pt-40 pb-0 px-6 overflow-hidden transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <section className={`relative min-h-screen flex flex-col items-center justify-center pt-40 pb-0 px-6 overflow-hidden transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
       {/* Floating Image Card */}
       <motion.div 
         initial={{ opacity: 0, x: 100, rotate: 10 }}

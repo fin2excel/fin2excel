@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
+import { useIsClient } from "@/hooks/use-is-client"
 
 interface Service {
   title: string
@@ -71,11 +72,10 @@ const AnimatedHeader = () => {
 
 // --- Main Component ---
 export function ServicesSection({ services }: ServicesSectionProps) {
-  const [mounted, setMounted] = useState(false)
+  const isClient = useIsClient()
   const [stickyOffset, setStickyOffset] = useState(120)
 
   useEffect(() => {
-    setMounted(true)
     const handleResize = () => {
       setStickyOffset(window.innerWidth < 768 ? 80 : 120)
     }
@@ -93,7 +93,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   ]
 
   return (
-    <div className={`bg-swiss-bg font-sans relative z-10 transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`bg-swiss-bg font-sans relative z-10 transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
           {/* The main section for the features */}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { BlurredInfiniteSlider } from '@/components/ui/infinite-slider';
 
 const LOGOS = [
@@ -36,13 +37,14 @@ export function LogoMarquee() {
                         >
                             {LOGOS.map((logo, i) => (
                                 <div key={`${logo.src}-${i}`} className="flex items-center justify-center px-4 transition-all duration-500 hover:scale-110">
-                                    <img
+                                    <Image
                                         className="w-auto object-contain"
                                         src={logo.src}
                                         alt={logo.alt}
-                                        style={{ height: `${logo.h}px` }}
+                                        height={logo.h}
+                                        width={200} // Placeholder width, will be overridden by w-auto
+                                        style={{ height: `${logo.h}px`, width: 'auto' }}
                                         loading="eager"
-                                        referrerPolicy="no-referrer"
                                     />
                                 </div>
                             ))}

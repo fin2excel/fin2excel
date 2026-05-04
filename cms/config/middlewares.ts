@@ -1,4 +1,4 @@
-export default [
+const middlewares = [
   'strapi::errors',
   {
     name: 'strapi::security',
@@ -23,3 +23,5 @@ export default [
   'strapi::favicon',
   'strapi::public',
 ];
+
+export default middlewares;
