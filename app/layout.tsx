@@ -8,6 +8,7 @@ import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { FloatingContact } from "@/components/ui/FloatingContact"
 import { JsonLd } from "@/components/ui/JsonLd"
 import { RenderWakeUp } from "@/components/ui/RenderWakeUp"
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fin2excel.com'),
@@ -68,6 +69,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Footer />
           <FloatingContact />
           <RenderWakeUp />
+          <Analytics />
         </SmoothScroll>
       </body>
     </html>
