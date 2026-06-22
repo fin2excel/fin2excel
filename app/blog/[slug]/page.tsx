@@ -73,7 +73,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'populate[seo][populate]': '*',
         'populate[cover]': '*',
         'populate[author]': '*'
-      } 
+      },
+      options: { timeout: 3000 } // Max 3s block for metadata to keep streaming fast
     });
     
     if (res?.data?.length > 0) {
@@ -125,7 +126,8 @@ export default async function BlogPostPage({ params }: PageProps) {
       query: { 
         'filters[slug][$eq]': resolvedParams.slug,
         'populate': '*'
-      } 
+      },
+      options: { timeout: 25000 } // Higher timeout to allow Render container startup
     });
     
     if (res?.data?.length > 0) {

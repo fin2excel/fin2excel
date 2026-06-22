@@ -7,6 +7,7 @@ import { CustomCursor } from "@/components/ui/custom-cursor"
 import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { FloatingContact } from "@/components/ui/FloatingContact"
 import { JsonLd } from "@/components/ui/JsonLd"
+import { RenderWakeUp } from "@/components/ui/RenderWakeUp"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fin2excel.com'),
@@ -66,6 +67,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           </main>
           <Footer />
           <FloatingContact />
+          <RenderWakeUp />
         </SmoothScroll>
       </body>
     </html>

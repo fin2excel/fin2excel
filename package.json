@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node -e \"fetch('https://fin2excel.onrender.com/api/articles?pagination[limit]=1').catch(() => {})\" && next build",
     "start": "next start",
     "lint": "eslint .",
     "clean": "next clean"

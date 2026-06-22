@@ -11,13 +11,24 @@ const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 interface FetchParams {
   endpoint: string;
   query?: Record<string, any>;
-  options?: RequestInit;
+  options?: RequestInit & { timeout?: number };
 }
 
 /**
- * Helper to make a fetch request to Strapi API
+ * Helper to make a fetch request to Strapi API with support for AbortController timeouts
  */
 export async function fetchAPI({ endpoint, query, options = {} }: FetchParams) {
+  const { timeout = 15000, ...restOptions } = options;
+
+  if (!STRAPI_TOKEN && process.env.NODE_ENV !== 'test') {
+    console.warn(`[Strapi] Warning: STRAPI_API_TOKEN is not defined. Relation data (like categories) will not be populated by Strapi for unauthenticated requests.`);
+  }
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+  }, timeout);
+
   try {
     const defaultOptions = {
       headers: {
@@ -28,10 +39,11 @@ export async function fetchAPI({ endpoint, query, options = {} }: FetchParams) {
 
     const mergedOptions = {
       ...defaultOptions,
-      ...options,
+      ...restOptions,
+      signal: controller.signal,
       headers: {
         ...defaultOptions.headers,
-        ...options.headers,
+        ...restOptions.headers,
       },
     };
 
@@ -57,6 +69,8 @@ export async function fetchAPI({ endpoint, query, options = {} }: FetchParams) {
   } catch (error) {
     console.error('Fetch API Error:', error);
     throw error;
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
