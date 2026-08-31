@@ -291,6 +291,54 @@
 }
 
 /* ═══════════════════════════════════════════
+   EDITORIAL BLOG CONTENT STYLING
+   ═══════════════════════════════════════════ */
+.blog-content p,
+.blog-html-body p {
+  @apply text-lg md:text-xl leading-relaxed mb-8 text-swiss-black/90 font-serif;
+}
+
+.blog-content h2,
+.blog-html-body h2 {
+  @apply text-2xl md:text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight text-swiss-black;
+}
+
+.blog-content h3,
+.blog-html-body h3 {
+  @apply text-xl md:text-2xl font-display font-bold mt-12 mb-4 uppercase tracking-tight text-swiss-black;
+}
+
+.blog-content blockquote,
+.blog-html-body blockquote {
+  @apply border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-xl md:text-2xl font-serif text-swiss-black/80 bg-swiss-blue/5;
+}
+
+.blog-content ul,
+.blog-html-body ul {
+  @apply list-disc pl-6 mb-10 space-y-4 text-lg md:text-xl font-serif text-swiss-black/90;
+}
+
+.blog-content ol,
+.blog-html-body ol {
+  @apply list-decimal pl-6 mb-10 space-y-4 text-lg md:text-xl font-serif text-swiss-black/90;
+}
+
+.blog-content li,
+.blog-html-body li {
+  @apply leading-relaxed;
+}
+
+.blog-content a,
+.blog-html-body a {
+  @apply text-swiss-blue underline hover:text-swiss-blue-dark transition-colors;
+}
+
+.blog-content strong,
+.blog-html-body strong {
+  @apply font-bold text-swiss-black;
+}
+
+/* ═══════════════════════════════════════════
    REDUCED MOTION
    ═══════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {

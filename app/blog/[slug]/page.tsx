@@ -8,17 +8,22 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
+// Helper to detect if content string contains HTML tags
+function isHtml(content: string): boolean {
+  return /<\/?(?:p|h[1-6]|div|span|blockquote|ul|ol|li|strong|em|table|tr|td|th|section|article|a|img|br|hr)\b/i.test(content);
+}
+
 // Fallback data
 const fallbackPosts: Record<string, any> = {
   "silent-migration-global-indian-wealth": {
-    title: "The Shift in Global NRI Wealth Management",
+    title: "The Silent Migration: Why Global Indian Wealth is Shifting to Private Family Offices",
     subtitle: "Why traditional banking is failing the modern Indian diaspora and the rise of the concierge model.",
     author: {
       name: "Adv. Jag Mohan Kapoor",
       role: "Founder & Managing Director",
       avatar: "/assets/logo.png"
     },
-    date: "May 1, 2026",
+    date: "May 12, 2026",
     readTime: "8 min read",
     category: "Wealth Strategy",
     image: "/assets/hero-office.png",
@@ -52,6 +57,111 @@ const fallbackPosts: Record<string, any> = {
       <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Looking Ahead</h2>
       <p class="mb-6">
         As we move towards 2027, the focus will increasingly shift towards "Legacy Engineering"—ensuring that wealth isn't just preserved, but successfully transitioned to the next generation with minimal legal friction and maximum impact.
+      </p>
+    `
+  },
+  "luxury-real-estate-outlook": {
+    title: "The 2026 Luxury Real Estate Outlook: Tier-1 Cities vs. Heritage Retreats",
+    subtitle: "Where the elite are placing their bets in the Indian property market this year.",
+    author: {
+      name: "Sarah D'Souza",
+      role: "Senior Real Estate Analyst",
+      avatar: "/assets/logo.png"
+    },
+    date: "May 10, 2026",
+    readTime: "5 min read",
+    category: "Property",
+    image: "/assets/global-network.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        India's luxury residential market is experiencing unprecedented demand, driven by capital inflows from global Indian families seeking ultra-prime assets in key metro hubs and private heritage sanctuaries.
+      </p>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">The Flight to Prime Metro Real Estate</h2>
+      <p class="mb-6">
+        Micro-markets like South Delhi, Golf Course Road in Gurugram, and South Mumbai continue to command premium valuations. The demand is heavily skewed towards gated, fully-managed boutique developments that offer international-standard amenities and concierge asset management.
+      </p>
+
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "Global Indians are no longer looking for speculative land; they demand institutional-grade asset preservation with turnkey management."
+      </blockquote>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">The Heritage and Wellness Second-Home Boom</h2>
+      <p class="mb-6">
+        Beyond the metro centres, luxury estates in Goa, Alibaug, Kasauli, and the foothills of the Himalayas have matured into prime lifestyle assets, providing both strong rental yields and private personal retreats for globetrotting families.
+      </p>
+    `
+  },
+  "fema-amendments-nris": {
+    title: "Navigating the New FEMA Amendments: What NRIs Need to Know",
+    subtitle: "Simplifying the latest regulatory changes to ensure your cross-border investments remain seamless.",
+    author: {
+      name: "Adv. Rajesh Kumar",
+      role: "Head of Legal & FEMA Compliance",
+      avatar: "/assets/logo.png"
+    },
+    date: "May 05, 2026",
+    readTime: "12 min read",
+    category: "Regulation",
+    image: "/assets/hero-office.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        With the recent regulatory updates from the Reserve Bank of India, cross-border remittances, inheritance transfers, and NRI property liquidations require stricter compliance scrutiny than ever before.
+      </p>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Repatriation and 15CA/CB Filing Clarity</h2>
+      <p class="mb-6">
+        Repatriating sale proceeds from ancestral property or financial assets under the 1 Million USD remittance scheme now demands airtight documentary evidence, clear tax clearance certificates, and coordinated filings with authorized dealer banks.
+      </p>
+
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "Proactive FEMA compliance turns complex regulatory hurdles into structured, predictable wealth transfers."
+      </blockquote>
+    `
+  },
+  "art-financial-concierge": {
+    title: "The Art of the Financial Concierge: Why Time is the Ultimate Asset",
+    subtitle: "How delegating complex logistical and financial management creates a higher quality of life.",
+    author: {
+      name: "Aditi Rao",
+      role: "Private Client Relationship Lead",
+      avatar: "/assets/logo.png"
+    },
+    date: "April 28, 2026",
+    readTime: "6 min read",
+    category: "Lifestyle",
+    image: "/assets/global-network.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        For Ultra-High-Net-Worth individuals, the scarcest currency is uninterrupted time. Managing multi-jurisdictional assets, elder care logistics, and localized property maintenance across time zones creates compounding friction.
+      </p>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Single-Point Execution</h2>
+      <p class="mb-6">
+        A private financial concierge serves as the unified operational bridge—coordinating tax attorneys, chartered accountants, municipal authorities, and caretakers on the ground without placing the logistical burden on the family.
+      </p>
+    `
+  },
+  "sustainable-philanthropy": {
+    title: "Sustainable Philanthropy: Building a Legacy Beyond Returns",
+    subtitle: "Strategic giving frameworks for Indian HNI families looking to create measurable social impact.",
+    author: {
+      name: "Adv. Jag Mohan Kapoor",
+      role: "Founder & Managing Director",
+      avatar: "/assets/logo.png"
+    },
+    date: "April 20, 2026",
+    readTime: "10 min read",
+    category: "Wealth Strategy",
+    image: "/assets/hero-office.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        Modern philanthropy is evolving from ad-hoc charitable donations into structured, impact-driven family foundations with institutional governance and generational longevity.
+      </p>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Structuring Philanthropic Trusts in India</h2>
+      <p class="mb-6">
+        Establishing tax-exempt trusts (12A/80G) and FCRA-compliant cross-border giving vehicles enables families to channel global capital into education, healthcare, and cultural preservation in India with complete transparency and compliance.
       </p>
     `
   }
@@ -210,11 +320,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="prose prose-lg max-w-none font-serif text-swiss-black/90 leading-[1.8] space-y-6 blog-content">
           {Array.isArray(post.content) ? (
             <BlocksRenderer content={post.content} />
-          ) : (
+          ) : typeof post.content === 'string' && isHtml(post.content) ? (
+            <div className="space-y-6 blog-html-body" dangerouslySetInnerHTML={{ __html: post.content }} />
+          ) : typeof post.content === 'string' ? (
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {post.content}
             </ReactMarkdown>
-          )}
+          ) : null}
         </div>
 
         <footer className="mt-24 pt-12 border-t border-swiss-black/10">
