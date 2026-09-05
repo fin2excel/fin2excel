@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/cms/', '/admin/'],
     },
-    sitemap: 'https://fin2excel.com/sitemap.xml',
+    sitemap: 'https://www.fin2excel.com/sitemap.xml',
   }
 }

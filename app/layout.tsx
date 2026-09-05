@@ -12,15 +12,51 @@ import { RenderWakeUp } from "@/components/ui/RenderWakeUp"
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fin2excel.com'),
-  title: 'Fin2Excel | Private Financial Concierge for HNI & NRI Families',
-  description: 'India\'s premier private financial concierge — wealth management, legal & taxation, elder care, and property management for high-net-worth and NRI families.',
-  keywords: ['financial concierge', 'HNI', 'NRI', 'wealth management', 'property management', 'elder care', 'India', 'private advisory'],
+  metadataBase: new URL('https://www.fin2excel.com'),
+  title: {
+    default: 'Fin2Excel | Private Financial Concierge & NRI Advisory',
+    template: '%s | Fin2Excel',
+  },
+  description: 'India\'s premier private financial concierge for global families. Specialized in NRI property sale, Lower TDS (Form 13), repatriation & elder care in Delhi NCR.',
+  keywords: [
+    'financial concierge',
+    'HNI',
+    'NRI',
+    'wealth management',
+    'property management',
+    'elder care',
+    'India',
+    'private advisory',
+    'Lower TDS certificate',
+    'Form 13',
+    'Section 195 TDS',
+    '15CA 15CB repatriation',
+  ],
   authors: [{ name: 'Fin2Excel Private Advisory' }],
-  robots: 'index, follow',
+  alternates: {
+    canonical: 'https://www.fin2excel.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '',
+    },
+  },
   openGraph: {
     title: 'Fin2Excel | Private Financial Concierge',
     description: 'India\'s premier private financial concierge for global families. Defining legacy through precision and absolute trust.',
+    url: 'https://www.fin2excel.com',
     type: 'website',
     locale: 'en_IN',
     siteName: 'Fin2Excel',
@@ -51,19 +87,33 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
         {/* End Google Tag Manager */}
 
-        {/* Google global site tag (gtag.js) for AW-11248127603 */}
+        {/* Google global site tag (gtag.js) for AW-11248127603 & GA4 G-VJT4GY7KRF */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11248127603"
+          src="https://www.googletagmanager.com/gtag/js?id=G-VJT4GY7KRF"
           strategy="afterInteractive"
         />
         <Script
           id="google-gtag-config"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-11248127603');`,
+            __html: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-11248127603');\ngtag('config', 'G-VJT4GY7KRF');`,
           }}
         />
         {/* End Google global site tag */}
+
+        {/* Microsoft Clarity */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "ydfv46b1r4");`,
+          }}
+        />
+        {/* End Microsoft Clarity */}
       </head>
       <body className="antialiased bg-swiss-bg text-swiss-black noise-bg font-sans" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}

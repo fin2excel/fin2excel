@@ -171,6 +171,32 @@ interface PageProps {
   params: Promise<{ slug: string }>
 }
 
+export async function generateStaticParams() {
+  const fallbackList = Object.keys(fallbackPosts).map((slug) => ({ slug }))
+
+  try {
+    const res = await fetchAPI({
+      endpoint: 'articles',
+      query: { fields: ['slug'] },
+      options: { timeout: 3000 }
+    })
+
+    if (res?.data && Array.isArray(res.data) && res.data.length > 0) {
+      const strapiList = res.data.map((article: any) => ({
+        slug: article.slug || article.documentId
+      }))
+      const uniqueSlugs = Array.from(
+        new Set([...fallbackList.map((item: { slug: string }) => item.slug), ...strapiList.map((item: any) => item.slug)])
+      )
+      return uniqueSlugs.map(slug => ({ slug }))
+    }
+  } catch (e) {}
+
+  return fallbackList
+}
+
+export const dynamicParams = true;
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   let post = fallbackPosts[resolvedParams.slug] || fallbackPosts["silent-migration-global-indian-wealth"];
@@ -180,9 +206,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       endpoint: 'articles', 
       query: { 
         'filters[slug][$eq]': resolvedParams.slug,
-        'populate[seo][populate]': '*',
-        'populate[cover]': '*',
-        'populate[author]': '*'
+        'populate': '*'
       },
       options: { timeout: 3000 } // Max 3s block for metadata to keep streaming fast
     });
