@@ -127,8 +127,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           "@context": "https://schema.org",
           "@type": "FinancialService",
           "name": "Fin2Excel",
-          "url": "https://fin2excel.com",
-          "logo": "https://fin2excel.com/assets/logo.png",
+          "url": "https://www.fin2excel.com",
+          "logo": "https://www.fin2excel.com/assets/logo.png",
           "description": "India's premier private financial concierge for high-net-worth and NRI families.",
           "address": {
             "@type": "PostalAddress",
