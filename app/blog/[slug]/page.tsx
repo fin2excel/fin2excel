@@ -164,6 +164,106 @@ const fallbackPosts: Record<string, any> = {
         Establishing tax-exempt trusts (12A/80G) and FCRA-compliant cross-border giving vehicles enables families to channel global capital into education, healthcare, and cultural preservation in India with complete transparency and compliance.
       </p>
     `
+  },
+  "nri-property-sale-lower-tds-form-13-guide": {
+    title: "How NRIs Can Avoid 20% TDS on Property Sale in India: The Complete Form 13 Guide (2026)",
+    subtitle: "A step-by-step legal walkthrough on obtaining a Nil or Lower TDS Certificate under Section 195 to protect your liquidity.",
+    author: {
+      name: "Adv. Jag Mohan Kapoor",
+      role: "Founder & Managing Director",
+      avatar: "/assets/logo.png"
+    },
+    date: "September 06, 2026",
+    readTime: "11 min read",
+    category: "Taxation & Legal",
+    image: "/assets/service-wealth.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        Selling real estate in India as a Non-Resident Indian (NRI) or Person of Indian Origin (PIO) comes with a severe liquidity risk: <strong>Section 195 of the Income Tax Act</strong> mandates that the buyer must deduct Tax Deducted at Source (TDS) at a flat rate of <strong>20% plus applicable surcharge and cess (reaching up to 23.92%) on the total gross sale consideration</strong>.
+      </p>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">The Trap of Gross vs. Net Deduction</h2>
+      <p class="mb-6">
+        Unlike resident Indians who pay 1% TDS under Section 194-IA, NRI sellers are subjected to Section 195. If an NRI sells an apartment in South Delhi or Gurugram for ₹5 Crore that was purchased 10 years ago for ₹3 Crore, the actual capital gain is only ₹2 Crore (or less after cost indexation).
+      </p>
+      <p class="mb-8">
+        However, by default, the buyer is required to withhold over ₹1.1 Crore from the gross consideration. This locks up a massive portion of the seller's rightful capital for 12 to 18 months until an Income Tax Return (ITR) is processed and a refund issued.
+      </p>
+
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "Do not allow 20% of your gross property proceeds to sit idle with the tax department. Form 13 is your legal entitlement to align tax deduction with actual tax liability."
+      </blockquote>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">The Solution: Form 13 on TRACES</h2>
+      <p class="mb-6">
+        Under Section 197 of the Income Tax Act, an NRI seller can file an online application in <strong>Form 13</strong> on the government TRACES portal to request a Lower or Nil Withholding Tax Certificate.
+      </p>
+      <ul class="list-disc pl-6 mb-10 space-y-4">
+        <li><strong>Indexed Acquisition Valuation:</strong> Recalculating the cost of purchase using the Cost Inflation Index (CII), drastically lowering taxable long-term capital gains (LTCG).</li>
+        <li><strong>Capital Gains Reinvestment (Section 54 / 54EC):</strong> Factoring in planned investments into Capital Gains Bonds (REC/NHAI) or another residential house in India to bring the effective tax liability to zero.</li>
+        <li><strong>Direct Certificate Issuance:</strong> The Assessing Officer (AO) issues a certificate authorizing the buyer's TAN to deduct only 0% to 5% at registry.</li>
+      </ul>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Document Checklist for Form 13</h2>
+      <ol class="list-decimal pl-6 mb-10 space-y-4">
+        <li>PAN card of both NRI Seller and Buyer.</li>
+        <li>Executed Agreement to Sell (ATS) clearly stating agreed sale consideration and payment schedule.</li>
+        <li>Original Registered Title Deed of the property.</li>
+        <li>Approved valuation report as of April 1, 2001 (if property acquired before 2001).</li>
+        <li>Bank statements evidencing acquisition payments and improvement expenses.</li>
+        <li>Past 3 assessment years' Indian ITR filings (if income was accrued in India).</li>
+      </ol>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Statutory Timeline & Best Practices</h2>
+      <p class="mb-6">
+        Processing typically takes <strong>3 to 5 weeks</strong>. The application should be submitted immediately upon execution of the Agreement to Sell, ensuring the certificate is received well before the final sale deed registration. Fin2Excel manages the entire process end-to-end, including direct representation before the International Taxation Ward.
+      </p>
+    `
+  },
+  "repatriate-nro-funds-15ca-15cb-guide": {
+    title: "Step-by-Step Repatriation of Indian Property & Inheritance Proceeds: Form 15CA & 15CB Manual",
+    subtitle: "How Non-Resident Indians can remit up to $1 Million USD annually from NRO to foreign bank accounts without regulatory friction.",
+    author: {
+      name: "Adv. Rajesh Kumar",
+      role: "Head of Legal & FEMA Compliance",
+      avatar: "/assets/logo.png"
+    },
+    date: "September 07, 2026",
+    readTime: "9 min read",
+    category: "FEMA & Banking",
+    image: "/assets/service-legal.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        Once an Indian asset is liquidated—whether real estate, family inheritance, mutual funds, or business equity—the proceeds are credited to an <strong>NRO (Non-Resident Ordinary) account</strong>. Moving these funds to an overseas bank account (or transferring to an NRE account) requires strict compliance with <strong>RBI's 1 Million USD Remittance Facility</strong> and FEMA guidelines.
+      </p>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">The Legal Architecture: Form 15CA & Form 15CB</h2>
+      <p class="mb-6">
+        To prevent unauthorized flight of capital and tax evasion, the Reserve Bank of India and Central Board of Direct Taxes (CBDT) mandate a two-tier verification mechanism:
+      </p>
+      <ul class="list-disc pl-6 mb-10 space-y-4">
+        <li><strong>Form 15CB (Chartered Accountant Certificate):</strong> An independent CA audits the financial source of funds, verifies that applicable Indian taxes have been paid or exempted under DTAA, and certifies the exact remittance amount.</li>
+        <li><strong>Form 15CA (Remitter Declaration):</strong> An online declaration filed by the remitter on the income tax portal, referencing the 15CB acknowledgement number.</li>
+      </ul>
+
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "The key to smooth fund repatriation is documentary traceability. If your purchase deed, sale deed, and bank trail reconcile perfectly, the wire transfer executes in 72 hours."
+      </blockquote>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">The 5-Step Repatriation Blueprint</h2>
+      <ol class="list-decimal pl-6 mb-10 space-y-4">
+        <li><strong>Reconciliation of Funds:</strong> Reconcile the sale consideration against bank credits and Form 26AS/TDS certificates.</li>
+        <li><strong>CA Audit & 15CB Issuance:</strong> Your Chartered Accountant issues Form 15CB with digital signature on the IT portal.</li>
+        <li><strong>Online 15CA Part C Filing:</strong> Generate and submit Form 15CA using the 15CB verification code.</li>
+        <li><strong>Bank A2 Application:</strong> Submit Form A2 (FEMA outward remittance application) along with 15CA/15CB to your Authorized Dealer bank.</li>
+        <li><strong>SWIFT Transfer:</strong> The bank executes the international wire to your overseas account (in USD, GBP, EUR, AED, or CAD).</li>
+      </ol>
+
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Inheritance Special Considerations</h2>
+      <p class="mb-6">
+        If the funds originate from an inheritance rather than a personal property sale, the bank will require the registered Will, Succession Certificate, or Family Settlement Agreement alongside death certificates of the deceased property owners. Fin2Excel specializes in structuring inheritance remittances with complete legal verification.
+      </p>
+    `
   }
 }
 

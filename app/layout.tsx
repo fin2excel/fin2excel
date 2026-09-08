@@ -125,19 +125,55 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         
         <JsonLd data={{
           "@context": "https://schema.org",
-          "@type": "FinancialService",
+          "@type": ["FinancialService", "LegalService", "LocalBusiness"],
           "name": "Fin2Excel",
+          "alternateName": "Fin2Excel Private Advisory",
           "url": "https://www.fin2excel.com",
           "logo": "https://www.fin2excel.com/assets/logo.png",
-          "description": "India's premier private financial concierge for high-net-worth and NRI families.",
+          "image": "https://www.fin2excel.com/assets/hero-office.png",
+          "description": "India's premier private financial concierge for high-net-worth and NRI families. Specialized in NRI property sale, Lower TDS Form 13, fund repatriation 15CA/15CB, and elder care in Delhi NCR.",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "E-578, Greater Kailash II",
             "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
             "postalCode": "110070",
-            "addressCountry": "India"
+            "addressCountry": "IN"
           },
-          "telephone": "+91-95607-59494"
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5355,
+            "longitude": 77.2410
+          },
+          "telephone": "+91-95607-59494",
+          "priceRange": "$$$$",
+          "currenciesAccepted": "INR, USD, GBP, AED, EUR, CAD, SGD",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:30",
+              "closes": "18:30"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/jag-kapoor-jrf",
+            "https://www.facebook.com/jmkapoor",
+            "https://www.instagram.com/fin2excel/",
+            "https://www.youtube.com/@Fin2Excel",
+            "https://x.com/fin2excel"
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "New Delhi" },
+            { "@type": "City", "name": "South Delhi" },
+            { "@type": "City", "name": "Gurgaon" },
+            { "@type": "Country", "name": "India" },
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "United Arab Emirates" },
+            { "@type": "Country", "name": "Canada" },
+            { "@type": "Country", "name": "Singapore" }
+          ]
         }} />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999999] focus:px-4 focus:py-2 focus:bg-swiss-black focus:text-swiss-bg focus:roun[...]">
           Skip to content

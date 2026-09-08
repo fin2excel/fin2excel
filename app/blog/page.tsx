@@ -62,6 +62,30 @@ const fallbackPosts = [
     author: "Vikram Mehta",
     img: "/assets/hero-office.png",
     featured: false
+  },
+  {
+    id: 6,
+    slug: "nri-property-sale-lower-tds-form-13-guide",
+    category: "Taxation & Legal",
+    title: "How NRIs Can Avoid 20% TDS on Property Sale in India: The Complete Form 13 Guide (2026)",
+    excerpt: "A comprehensive legal walkthrough of Section 195, TRACES Form 13 filing, required documentary evidence, and strategies to reduce capital gains withholding to 0%-5%.",
+    date: "September 06, 2026",
+    readTime: "11 min read",
+    author: "Adv. Jag Mohan Kapoor",
+    img: "/assets/service-wealth.png",
+    featured: true
+  },
+  {
+    id: 7,
+    slug: "repatriate-nro-funds-15ca-15cb-guide",
+    category: "FEMA & Banking",
+    title: "Step-by-Step Repatriation of Indian Property & Inheritance Proceeds: Form 15CA & 15CB Manual",
+    excerpt: "How Non-Resident Indians can legally remit up to $1M USD from NRO accounts to overseas banks under RBI guidelines without delays or tax penalties.",
+    date: "September 07, 2026",
+    readTime: "9 min read",
+    author: "Adv. Rajesh Kumar",
+    img: "/assets/service-legal.png",
+    featured: false
   }
 ]
 

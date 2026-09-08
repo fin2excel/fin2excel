@@ -4,6 +4,8 @@ import { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform, useSpring } from "motion/react"
 import { Globe } from "@/components/cobe-globe"
 
+import Link from "next/link"
+
 export default function ServicesPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -17,10 +19,11 @@ export default function ServicesPage() {
       title: "Wealth & Investment",
       subtitle: "Capital Preservation & Growth",
       desc: "Sophisticated asset allocation and portfolio optimization tailored for the unique requirements of high-net-worth global families. We navigate Indian markets with surgical precision.",
+      href: "/services/lower-tds-certificate-form-13",
       features: [
-        "Private Equity Access",
-        "Diversified Mutual Funds",
-        "Portfolio Management Services (PMS)",
+        "Lower TDS Form 13",
+        "Section 195 Exemption",
+        "Portfolio Management (PMS)",
         "Fixed Income Strategies"
       ],
       img: "/assets/service-wealth.png",
@@ -31,11 +34,12 @@ export default function ServicesPage() {
       title: "Legal & Taxation",
       subtitle: "Cross-Border Compliance",
       desc: "Navigating the complexities of FEMA, Income Tax, and Estate Planning. We ensure your global footprint remains compliant and optimized for generational wealth transfer.",
+      href: "/services/nri-fund-repatriation-15ca-15cb",
       features: [
-        "NRI Tax Advisory",
+        "15CA & 15CB Certification",
+        "1M USD Remittance Scheme",
         "Trust & Estate Planning",
-        "Succession Management",
-        "Regulatory Compliance"
+        "Succession Management"
       ],
       img: "/assets/service-legal.png",
       color: "#111111"
@@ -45,11 +49,12 @@ export default function ServicesPage() {
       title: "Property Concierge",
       subtitle: "Asset Stewardship",
       desc: "End-to-end management of Indian real estate assets. From acquisition and maintenance to rental management and liquidation, we act as your eyes and ears on the ground.",
+      href: "/services/nri-property-management-delhi",
       features: [
-        "Portfolio Maintenance",
-        "Tenant Lifecycle Management",
-        "Legal Verification",
-        "Valuation Services"
+        "South Delhi & Gurgaon Desk",
+        "Tenant Due Diligence",
+        "Physical Inspection Audits",
+        "MCD Property Tax Compliance"
       ],
       img: "/assets/service-property.png",
       color: "#0066FF"
@@ -59,11 +64,12 @@ export default function ServicesPage() {
       title: "Elder Care",
       subtitle: "Absolute Peace of Mind",
       desc: "Dignified, single-point logistical and healthcare support for your family in India. We provide the care and attention that transcends professional boundaries.",
+      href: "/services/elder-care-concierge-delhi-ncr",
       features: [
-        "Healthcare Coordination",
-        "Logistical Support",
-        "Emergency Assistance",
-        "Wellness Oversight"
+        "Hospital Accompaniment (Max/Medanta)",
+        "24/7 Emergency Bridge",
+        "Prescription Logistics",
+        "Household Care Concierge"
       ],
       img: "/assets/service-elder.png",
       color: "#111111"
@@ -154,6 +160,17 @@ function ServiceItem({ service, index }: { service: any, index: number }) {
               </li>
             ))}
           </ul>
+          {service.href && (
+            <div className="pt-6">
+              <Link 
+                href={service.href}
+                className="inline-flex items-center gap-3 px-6 py-3 bg-swiss-black text-white hover:bg-swiss-blue transition-colors text-xs font-bold uppercase tracking-widest group"
+              >
+                <span>Explore Dedicated Service</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          )}
         </motion.div>
       </div>
 

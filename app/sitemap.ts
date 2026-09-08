@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next'
 import { fetchAPI } from '@/lib/strapi'
 
 const fallbackPosts = [
+  { slug: 'nri-property-sale-lower-tds-form-13-guide', updatedAt: '2026-09-06' },
+  { slug: 'repatriate-nro-funds-15ca-15cb-guide', updatedAt: '2026-09-07' },
   { slug: 'silent-migration-global-indian-wealth', updatedAt: '2026-05-12' },
   { slug: 'luxury-real-estate-outlook', updatedAt: '2026-05-10' },
   { slug: 'fema-amendments-nris', updatedAt: '2026-05-05' },
@@ -22,6 +24,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: 'https://www.fin2excel.com/services/lower-tds-certificate-form-13',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: 'https://www.fin2excel.com/services/nri-fund-repatriation-15ca-15cb',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: 'https://www.fin2excel.com/services/nri-property-management-delhi',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: 'https://www.fin2excel.com/services/elder-care-concierge-delhi-ncr',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
     },
     {
       url: 'https://www.fin2excel.com/about',
@@ -57,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `https://www.fin2excel.com/blog/${post.slug || post.documentId}`,
         lastModified: new Date(post.updatedAt || new Date()),
         changeFrequency: 'weekly' as const,
-        priority: 0.8,
+        priority: 0.85,
       }))
     }
   } catch (e) {
@@ -70,7 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `https://www.fin2excel.com/blog/${post.slug}`,
       lastModified: new Date(post.updatedAt),
       changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      priority: 0.85,
     }))
   }
 
