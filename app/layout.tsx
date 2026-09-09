@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import { Lora } from 'next/font/google';
 import './globals.css'; 
 import { Navigation } from "@/components/sections/Navigation"
 import { Footer } from "@/components/sections/Footer"
@@ -11,6 +12,14 @@ import { RenderWakeUp } from "@/components/ui/RenderWakeUp"
 import { ThirdPartyAnalytics } from "@/components/analytics/ThirdPartyAnalytics"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.fin2excel.com'),
@@ -76,7 +85,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={lora.variable} suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/ClashDisplay-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Satoshi-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="antialiased bg-swiss-bg text-swiss-black noise-bg font-sans" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
