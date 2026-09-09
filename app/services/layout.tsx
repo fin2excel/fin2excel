@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { JsonLd } from '@/components/ui/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Bespoke NRI Services | Taxation, Legal, Property & Elder Care',
+  title: {
+    absolute: 'NRI Advisory Services | Tax, Property & Elder Care | Fin2Excel',
+  },
   description: "Explore Fin2Excel bespoke NRI services: Lower TDS Form 13, 15CA/15CB repatriation, South Delhi property management, and 24/7 parent elder care in Delhi NCR.",
   keywords: [
     'NRI advisory services',
@@ -17,14 +19,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.fin2excel.com/services',
   },
   openGraph: {
-    title: 'Bespoke NRI Services | Taxation, Legal, Property & Elder Care',
+    title: 'NRI Advisory Services | Tax, Property & Elder Care | Fin2Excel',
     description: "Explore Fin2Excel bespoke NRI services: Lower TDS Form 13, 15CA/15CB repatriation, South Delhi property management, and 24/7 parent elder care in Delhi NCR.",
     url: 'https://www.fin2excel.com/services',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bespoke NRI Services | Taxation, Legal, Property & Elder Care',
+    title: 'NRI Advisory Services | Tax, Property & Elder Care | Fin2Excel',
     description: "Explore Fin2Excel bespoke NRI services: Lower TDS Form 13, 15CA/15CB repatriation, South Delhi property management, and 24/7 parent elder care in Delhi NCR.",
   },
 };

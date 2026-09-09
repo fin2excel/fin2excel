@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Fin2Excel Private Advisory & Concierge',
+  title: {
+    absolute: 'Contact Us | Fin2Excel Private Advisory & Concierge',
+  },
   description: "Connect with Fin2Excel advisors in Greater Kailash II, South Delhi. Schedule a private consultation for NRI property tax, fund repatriation, and elder care.",
   keywords: [
     'contact Fin2Excel',

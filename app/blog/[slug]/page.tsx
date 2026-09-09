@@ -443,8 +443,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       const article = res.data[0];
       const seo = article.seo;
       
-      const rawDesc = seo?.metaDescription || article.excerpt;
-      const finalDesc = (rawDesc && rawDesc.trim().length >= 140) ? rawDesc.trim() : (fallback?.description || rawDesc || fallback?.subtitle);
+      const rawDesc = (seo?.metaDescription || article.excerpt || '').trim();
+      const finalDesc = (rawDesc.length >= 150 && rawDesc.length <= 160) ? rawDesc : (fallback?.description || rawDesc || fallback?.subtitle);
       
       post = {
         title: seo?.metaTitle || article.title,
@@ -458,27 +458,31 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   } catch (e) {}
 
-  const postTitle = post.title || 'Private Wealth & NRI Advisory Insights';
-  const postDescription = post.description || post.subtitle || `${postTitle} - In-depth legal, taxation, and asset stewardship advisory for global NRI families by Fin2Excel.`;
+  const rawPostTitle = post.title || 'Private Wealth & NRI Advisory Insights';
+  const cleanTitle = rawPostTitle.replace(/\s*\|\s*Fin2Excel(\s*Insights)?/gi, '').trim();
+  const finalTitle = `${cleanTitle} | Fin2Excel Insights`;
+  const postDescription = post.description || post.subtitle || `${cleanTitle} - In-depth legal, taxation, and asset stewardship advisory for global NRI families by Fin2Excel.`;
   const canonicalUrl = post.canonical || `https://www.fin2excel.com/blog/${resolvedParams.slug}`;
 
   return {
-    title: `${postTitle} | Fin2Excel Insights`,
+    title: {
+      absolute: finalTitle,
+    },
     description: postDescription,
     keywords: post.keywords,
     alternates: { canonical: canonicalUrl },
     robots: post.robots || { index: true, follow: true },
     openGraph: {
-      title: `${postTitle} | Fin2Excel Insights`,
+      title: finalTitle,
       description: postDescription,
       url: canonicalUrl,
       type: 'article',
       authors: [post.author?.name || 'Fin2Excel Private Advisory'],
-      images: [{ url: post.image || '/assets/hero-office.png', width: 1200, height: 630, alt: postTitle }],
+      images: [{ url: post.image || '/assets/hero-office.png', width: 1200, height: 630, alt: cleanTitle }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${postTitle} | Fin2Excel Insights`,
+      title: finalTitle,
       description: postDescription,
       images: [post.image || '/assets/hero-office.png'],
     }

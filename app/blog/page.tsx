@@ -3,7 +3,9 @@ import { fetchAPI, getStrapiMedia } from "@/lib/strapi"
 import BlogList from "./BlogList"
 
 export const metadata: Metadata = {
-  title: 'Insights & Journal | Private Wealth & NRI Legal Guides',
+  title: {
+    absolute: 'NRI Wealth & Legal Journal | Fin2Excel Insights',
+  },
   description: 'Expert insights on Indian taxation, Section 195 Lower TDS Form 13, RBI 15CA/15CB repatriation, luxury real estate, and estate planning for global NRIs.',
   keywords: [
     'NRI tax blog',
@@ -17,14 +19,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.fin2excel.com/blog',
   },
   openGraph: {
-    title: 'Insights & Journal | Private Wealth & NRI Legal Guides',
+    title: 'NRI Wealth & Legal Journal | Fin2Excel Insights',
     description: 'Expert insights on Indian taxation, Section 195 Lower TDS Form 13, RBI 15CA/15CB repatriation, luxury real estate, and estate planning for global NRIs.',
     url: 'https://www.fin2excel.com/blog',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Insights & Journal | Private Wealth & NRI Legal Guides',
+    title: 'NRI Wealth & Legal Journal | Fin2Excel Insights',
     description: 'Expert insights on Indian taxation, Section 195 Lower TDS Form 13, RBI 15CA/15CB repatriation, luxury real estate, and estate planning for global NRIs.',
   },
 };
