@@ -137,7 +137,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             "streetAddress": "E-578, Greater Kailash II",
             "addressLocality": "New Delhi",
             "addressRegion": "Delhi",
-            "postalCode": "110070",
+            "postalCode": "110048",
             "addressCountry": "IN"
           },
           "geo": {
@@ -146,8 +146,71 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             "longitude": 77.2410
           },
           "telephone": "+91-95607-59494",
+          "email": "advisory@fin2excel.com",
           "priceRange": "$$$$",
           "currenciesAccepted": "INR, USD, GBP, AED, EUR, CAD, SGD",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-95607-59494",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Hindi"],
+            "areaServed": ["IN", "US", "GB", "AE", "CA", "SG"]
+          },
+          "knowsAbout": [
+            "Section 195 of Income Tax Act 1961",
+            "Lower TDS Certificate Form 13",
+            "Form 15CA and Form 15CB Certification",
+            "RBI Liberalised Remittance Scheme (LRS)",
+            "NRO to Overseas Bank Account Repatriation",
+            "Capital Gains Tax Exemption Section 54 and Section 54EC",
+            "NRI Real Estate Management and Asset Stewardship in Delhi NCR",
+            "Elder Care Medical Concierge in Delhi NCR",
+            "Greater Kailash II, South Delhi",
+            "Double Taxation Avoidance Agreement (DTAA)",
+            "Foreign Exchange Management Act (FEMA)"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Private NRI Advisory & Concierge Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Lower TDS Certificate (Form 13) for NRI Property Sale",
+                  "url": "https://www.fin2excel.com/services/lower-tds-certificate-form-13",
+                  "description": "Filing of Form 13 under Section 195/197 to reduce withholding tax on NRI real estate transactions in India from 20%+ to actual net liability."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "NRI Fund Repatriation (Form 15CA & 15CB)",
+                  "url": "https://www.fin2excel.com/services/nri-fund-repatriation-15ca-15cb",
+                  "description": "CA 15CB certification and online 15CA Part C filing under RBI 1 Million USD remittance scheme for overseas fund transfer."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "NRI Property Concierge & Asset Stewardship (Delhi NCR)",
+                  "url": "https://www.fin2excel.com/services/nri-property-management-delhi",
+                  "description": "End-to-end management of Indian real estate assets across South Delhi and Gurgaon, including tenant KYC, physical inspections, and municipal tax clearance."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Elder Care Concierge & Medical Accompaniment (Delhi NCR)",
+                  "url": "https://www.fin2excel.com/services/elder-care-concierge-delhi-ncr",
+                  "description": "Dedicated single-point logistical and clinical accompaniment for elderly parents in Delhi NCR with Max, Medanta, and Fortis hospitals."
+                }
+              }
+            ]
+          },
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",

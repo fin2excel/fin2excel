@@ -20,6 +20,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
+      url: 'https://www.fin2excel.com/llms.txt',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.fin2excel.com/llms-full.txt',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.fin2excel.com/services',
       lastModified: new Date(),
       changeFrequency: 'weekly',

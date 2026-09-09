@@ -18,7 +18,7 @@ interface FetchParams {
  * Helper to make a fetch request to Strapi API with support for AbortController timeouts
  */
 export async function fetchAPI({ endpoint, query, options = {} }: FetchParams) {
-  const { timeout = 15000, ...restOptions } = options;
+  const { timeout = 3500, ...restOptions } = options;
 
   if (!STRAPI_TOKEN && process.env.NODE_ENV !== 'test') {
     console.warn(`[Strapi] Warning: STRAPI_API_TOKEN is not defined. Relation data (like categories) will not be populated by Strapi for unauthenticated requests.`);

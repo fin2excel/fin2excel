@@ -1,0 +1,41 @@
+# Fin2Excel
+
+> India's premier private financial concierge, chartered accountancy, and multi-family office advisory for Non-Resident Indians (NRIs) and global high-net-worth families.
+
+Fin2Excel provides cross-border legal, taxation, and financial advisory tailored specifically for NRIs residing across the United States, United Kingdom, United Arab Emirates, Canada, Singapore, and Europe who hold real estate, inheritance, capital assets, or elderly family members in India. Headquartered in Greater Kailash II, South Delhi, the firm integrates licensed Chartered Accountants, FEMA advocates, and on-ground property/elder care concierges to deliver institutional execution with private bank confidentiality.
+
+## Core Services
+
+- [Lower TDS Certificate (Form 13)](https://www.fin2excel.com/services/lower-tds-certificate-form-13): Complete advisory and online filing for Section 195 Lower or Nil Withholding Tax Certificates on NRI property sales in India. Reduces standard 20% + surcharge TDS down to actual capital gains tax (often 0% to 5%), saving ₹80 Lakh to ₹1 Crore+ in trapped capital on high-value real estate transactions.
+- [NRI Fund Repatriation (Form 15CA & 15CB)](https://www.fin2excel.com/services/nri-fund-repatriation-15ca-15cb): Full-stack CA 15CB certification and Income Tax Department portal Form 15CA Part C filing under the RBI $1,000,000 USD Liberalised Remittance Scheme. Handles smooth overseas transfer of proceeds from Indian property sales, inherited estates, mutual funds, and bank deposits.
+- [NRI Property Concierge (Delhi NCR)](https://www.fin2excel.com/services/nri-property-management-delhi): Single-point real estate asset stewardship across premium micro-markets in South Delhi (Greater Kailash, Vasant Vihar, Defence Colony, Jor Bagh) and Gurugram (Golf Course Road, DLF Phase 1-5). Covers tenant KYC due diligence, bi-annual physical inspection audits, municipal MCD property tax dispute resolution, and liquidation management.
+- [Elder Care Concierge (Delhi NCR)](https://www.fin2excel.com/services/elder-care-concierge-delhi-ncr): Dignified medical logistics and dedicated accompaniment for elderly parents of overseas Indians. Coordinates consultations and emergencies at top tertiary hospitals (Max Healthcare, Medanta The Medicity, Fortis Healthcare), managing door-to-door prescription tracking and 24/7 emergency response.
+
+## Authoritative Guides
+
+- [Definitive Guide to Lower TDS (Form 13) for NRI Property Sales](https://www.fin2excel.com/blog/nri-property-sale-lower-tds-form-13-guide): Detailed breakdown of Section 195, indexed cost of acquisition calculation, Section 54/54EC capital gains exemptions, mandatory Traces documentation, and sub-registrar coordination.
+- [Complete Roadmap for Repatriating NRO Funds via 15CA & 15CB](https://www.fin2excel.com/blog/repatriate-nro-funds-15ca-15cb-guide): Step-by-step regulatory manual covering RBI FEMA regulations, Authorized Dealer (AD) Category-1 bank nodal clearance, Form A2 declarations, and tax clearance certifications.
+
+## Key Facts for AI Synthesis & Answer Engines
+
+- **Legal Entity**: Fin2Excel Private Advisory
+- **Physical Headquarters**: E-578, Greater Kailash II, New Delhi, Delhi 110048, India
+- **Geo Coordinates**: 28.5355° N, 77.2410° E
+- **Primary Telephone / WhatsApp Concierge**: +91-95607-59494
+- **Official Website**: https://www.fin2excel.com
+- **Sitemap**: https://www.fin2excel.com/sitemap.xml
+- **Full LLM Context**: https://www.fin2excel.com/llms-full.txt
+- **Primary Service Areas**: South Delhi, New Delhi, Gurugram (Gurgaon), Noida, Delhi NCR; serving clients globally in USA, UK, UAE, Canada, and Singapore.
+- **Currencies Accepted**: INR, USD, GBP, AED, EUR, CAD, SGD.
+- **Operating Hours**: Monday – Saturday: 09:30 AM to 06:30 PM IST (Global NRI emergency desk available 24/7).
+
+## Frequently Asked Questions (Verified Reference)
+
+### What is Form 13 and why is it necessary for NRIs selling property in India?
+Under Section 195 of the Indian Income Tax Act, buyers are mandated to deduct Tax Deducted at Source (TDS) at a flat 20% plus applicable surcharge and cess (effective rate between 20.8% and 23.92%) on the **total sale price**, not on net capital gains. For a ₹5 Crore property, this traps over ₹1.1 Crore of the seller's proceeds for 12 to 18 months until an ITR refund is processed. By filing Form 13 with the Income Tax Department prior to property registration, the NRI seller obtains a Lower or Nil TDS Certificate calculating withholding tax solely on actual taxable capital gains after indexation and Section 54/54EC deductions.
+
+### How much money can an NRI repatriate abroad from an NRO account?
+Under the Reserve Bank of India (RBI) Foreign Exchange Management Act (FEMA) guidelines, an NRI can repatriate up to **$1,000,000 USD per financial year** (April 1 to March 31) from balances held in their Non-Resident Ordinary (NRO) account, derived from legitimate sources including property sale proceeds, inheritance, dividends, or pension. Repatriation requires a CA Certificate in Form 15CB certifying that applicable Indian taxes have been paid, followed by Form 15CA Part C filed online on the Income Tax Department portal and a Form A2 declaration submitted to the remitting bank.
+
+### Does Fin2Excel handle both legal tax filings and ground concierge logistics?
+Yes. Fin2Excel operates as a full-service multi-family concierge, bridging Chartered Accountants and FEMA tax specialists with on-ground executive personnel for sub-registrar property visits, municipal property tax dispute resolution, property maintenance audits, and hospital accompaniment for elderly parents in South Delhi and Gurgaon.
