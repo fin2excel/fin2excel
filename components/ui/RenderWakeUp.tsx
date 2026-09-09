@@ -8,21 +8,51 @@ import { useEffect } from 'react'
  */
 export function RenderWakeUp() {
   useEffect(() => {
-    // Determine the Strapi URL from environment or default
-    const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://fin2excel.onrender.com'
-    const cleanUrl = `${strapiUrl.replace(/\/+$/, '')}/api/articles?pagination[limit]=1`
+    let triggered = false
 
-    console.log('[Render Wakeup] Waking up database in background:', cleanUrl)
+    const wakeUp = () => {
+      if (triggered) return
+      triggered = true
 
-    // Fire-and-forget fetch. Does not block rendering or user interaction.
-    // 'no-cors' mode is used since we only want to trigger the request at Render's routing proxy.
-    fetch(cleanUrl, { mode: 'no-cors' })
-      .then(() => {
-        console.log('[Render Wakeup] Silent wake-up request successfully dispatched.')
-      })
-      .catch((err) => {
-        console.warn('[Render Wakeup] Failed to dispatch background wake-up:', err.message)
-      })
+      window.removeEventListener('scroll', wakeUp)
+      window.removeEventListener('mousemove', wakeUp)
+      window.removeEventListener('touchstart', wakeUp)
+
+      const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://fin2excel.onrender.com'
+      const cleanUrl = `${strapiUrl.replace(/\/+$/, '')}/api/articles?pagination[limit]=1`
+
+      // 2.5s timeout: Render proxy registers the hit immediately and initiates container boot,
+      // while preventing hanging sockets from blocking browser network idle.
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 2500)
+
+      fetch(cleanUrl, { mode: 'no-cors', signal: controller.signal })
+        .then(() => {
+          clearTimeout(timeoutId)
+          console.log('[Render Wakeup] Silent wake-up ping dispatched.')
+        })
+        .catch((err) => {
+          clearTimeout(timeoutId)
+          if (err.name !== 'AbortError') {
+            console.warn('[Render Wakeup] Wake-up notice:', err.message)
+          }
+        })
+    }
+
+    // Trigger on first human interaction
+    window.addEventListener('scroll', wakeUp, { passive: true, once: true })
+    window.addEventListener('mousemove', wakeUp, { passive: true, once: true })
+    window.addEventListener('touchstart', wakeUp, { passive: true, once: true })
+
+    // Fallback: ping after 6s idle
+    const timer = setTimeout(wakeUp, 6000)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('scroll', wakeUp)
+      window.removeEventListener('mousemove', wakeUp)
+      window.removeEventListener('touchstart', wakeUp)
+    }
   }, [])
 
   return null
