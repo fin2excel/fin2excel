@@ -89,9 +89,9 @@ export default function LandingPage() {
           <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pointer-events-none z-0">
             <motion.div 
               style={{ opacity: globeOpacity, scale: globeScale, y: globeY }}
-              className="w-[100vw] md:w-[70vw] h-[100vw] md:h-[70vw] absolute"
+              className="w-[100vw] md:w-[70vw] h-[100vw] md:h-[70vw] absolute hidden md:block"
             >
-              <Globe />
+              {isDesktop && <Globe />}
             </motion.div>
           </div>
 

@@ -119,6 +119,7 @@ export function Globe({
     let animationId: number
     let phi = 0
     let isVisible = true
+    let startAnimation: (() => void) | null = null
 
     // Check WebGL availability before initializing
 
@@ -158,10 +159,7 @@ export function Globe({
       })
 
       function animate() {
-        if (!isVisible) {
-          animationId = requestAnimationFrame(animate)
-          return
-        }
+        if (!isVisible) return
 
         if (!isPausedRef.current) {
           phi += speed
@@ -183,6 +181,7 @@ export function Globe({
         }
         animationId = requestAnimationFrame(animate)
       }
+      startAnimation = animate
       animate()
       setTimeout(() => canvas && (canvas.style.opacity = "1"))
     }
@@ -191,7 +190,13 @@ export function Globe({
 
     // Pause rendering when scrolled off-screen
     const observer = new IntersectionObserver(
-      ([entry]) => { isVisible = entry.isIntersecting },
+      ([entry]) => {
+        const wasVisible = isVisible
+        isVisible = entry.isIntersecting
+        if (isVisible && !wasVisible && startAnimation) {
+          startAnimation()
+        }
+      },
       { threshold: 0.1 }
     )
     observer.observe(canvas)

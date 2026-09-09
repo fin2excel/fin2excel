@@ -10,8 +10,8 @@ export function CustomCursor() {
   const ringPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Only show on non-touch devices
-    if (window.matchMedia('(pointer: coarse)').matches) return;
+    // Only show on desktop devices with fine pointer
+    if (window.innerWidth < 1024 || window.matchMedia('(pointer: coarse)').matches) return;
 
     const dot = dotRef.current;
     if (!dot) return;
