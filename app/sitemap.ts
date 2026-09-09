@@ -1,11 +1,12 @@
 import { MetadataRoute } from 'next'
 import { fetchAPI } from '@/lib/strapi'
 
+// Only include substantive, on-topic pillar posts in the fallback.
+// Strapi posts are added dynamically below when the CMS is reachable.
 const fallbackPosts = [
   { slug: 'nri-property-sale-lower-tds-form-13-guide', updatedAt: '2026-09-06' },
   { slug: 'repatriate-nro-funds-15ca-15cb-guide', updatedAt: '2026-09-07' },
   { slug: 'the-nri-wealth-playbook-2026-global-assets-and-indian-growth', updatedAt: '2026-09-08' },
-  { slug: 'fueling-ambition-strategic-business-loans-for-the-2026-economy', updatedAt: '2026-09-08' },
   { slug: 'the-surrogate-child-model-redefining-elder-care-in-india-for-2026', updatedAt: '2026-09-08' },
   { slug: 'dubai-2027-the-rise-of-a-mature-global-real-estate-powerhouse', updatedAt: '2026-09-08' },
   { slug: 'silent-migration-global-indian-wealth', updatedAt: '2026-05-12' },
@@ -22,18 +23,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
-    },
-    {
-      url: 'https://www.fin2excel.com/llms.txt',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://www.fin2excel.com/llms-full.txt',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
     },
     {
       url: 'https://www.fin2excel.com/services',
