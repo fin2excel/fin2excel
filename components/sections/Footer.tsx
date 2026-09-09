@@ -107,13 +107,14 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-bold mb-6">Services</p>
+            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-bold mb-6">Key Services</p>
             <ul className="space-y-3">
               {[
-                { name: "Property Management", href: "/services" },
-                { name: "Wealth Advisory", href: "/services" },
-                { name: "Legal & Taxation", href: "/services" },
-                { name: "Elder Care", href: "/services" }
+                { name: "Lower TDS Form 13", href: "/services/lower-tds-certificate-form-13" },
+                { name: "15CA / 15CB Repatriation", href: "/services/nri-fund-repatriation-15ca-15cb" },
+                { name: "Delhi Property Caretaker", href: "/services/nri-property-management-delhi" },
+                { name: "Elder Care Concierge", href: "/services/elder-care-concierge-delhi-ncr" },
+                { name: "All Advisory Services", href: "/services" }
               ].map(item => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-white/40 text-sm hover:text-white transition-colors duration-300">{item.name}</Link>
