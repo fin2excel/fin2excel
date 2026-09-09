@@ -48,6 +48,7 @@ export function Navigation() {
               src="/assets/logo-gray.png" 
               alt="Fin2Excel Logo" 
               fill 
+              sizes="40px"
               className="object-contain"
             />
           </div>

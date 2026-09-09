@@ -91,7 +91,7 @@ export function StatsSection() {
             <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-medium group-hover:text-swiss-blue transition-colors duration-500">
               {stat.label}
             </dt>
-            <dd className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-semibold tracking-tight text-swiss-black whitespace-nowrap">
+            <dd className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-semibold tracking-tight text-swiss-black whitespace-nowrap flex flex-col items-center">
               <AnimatedCounter
                 value={stat.value}
                 prefix={stat.prefix}
@@ -99,8 +99,8 @@ export function StatsSection() {
                 hasPlus={stat.hasPlus}
                 inView={inView}
               />
+              <span aria-hidden="true" className="w-8 h-[1.5px] bg-swiss-blue/30 group-hover:w-16 group-hover:bg-swiss-blue transition-all duration-700 ease-out mt-4 block" />
             </dd>
-            <div className="w-8 h-[1.5px] bg-swiss-blue/30 group-hover:w-16 group-hover:bg-swiss-blue transition-all duration-700 ease-out" />
           </motion.div>
         ))}
       </dl>

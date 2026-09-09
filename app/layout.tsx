@@ -89,13 +89,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <head>
         <link
           rel="preload"
-          href="/fonts/ClashDisplay-Bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
           href="/fonts/ClashDisplay-Semibold.woff2"
           as="font"
           type="font/woff2"
@@ -103,7 +96,14 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
         <link
           rel="preload"
-          href="/fonts/Satoshi-Bold.woff2"
+          href="/fonts/Satoshi-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ClashDisplay-Medium.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

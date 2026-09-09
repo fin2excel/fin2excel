@@ -1,6 +1,6 @@
 @keyframes earthRotate {
-  0% { background-position: 0 0; }
-  100% { background-position: 400px 0; }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 @keyframes twinkling { 0%,100% { opacity:0.1; } 50% { opacity:1; } }
 @keyframes twinkling-slow { 0%,100% { opacity:0.1; } 50% { opacity:1; } }
@@ -21,16 +21,34 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2), 
-              -5px 0 8px #c3f4ff inset, 
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.globe-sphere::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: url('/assets/globe.jpeg');
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: earthRotate 30s linear infinite;
+  will-change: transform;
+}
+
+.globe-sphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: -5px 0 8px #c3f4ff inset, 
               15px 2px 25px #000 inset, 
               -24px -2px 34px #c3f4ff99 inset, 
               250px 0 44px #00000066 inset, 
               150px 0 38px #000000aa inset;
-  background-image: url('https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev/globe.jpeg');
-  background-size: cover;
-  background-position: left;
-  animation: earthRotate 30s linear infinite;
 }
 
 .star {
@@ -39,6 +57,7 @@
   height: 4px;
   background-color: white;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .star-1 { left: 10%; top: 20%; animation: twinkling 3s infinite; }

@@ -34,6 +34,7 @@ export function Footer() {
                   src="/assets/logo.png" 
                   alt="Fin2Excel Logo" 
                   fill 
+                  sizes="32px"
                   className="object-contain"
                 />
               </div>
