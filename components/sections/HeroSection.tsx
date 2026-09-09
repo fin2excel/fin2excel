@@ -23,7 +23,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
   const leftCardRotate = useTransform(globeY, [0, 100], [-6, 2])
 
   return (
-    <section className={`relative min-h-screen flex flex-col items-center justify-center pt-40 pb-0 px-6 overflow-hidden transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-0 px-6 overflow-hidden">
       {/* Floating Image Card */}
       <motion.div 
         initial={{ opacity: 0, x: 100, rotate: 10 }}
@@ -97,14 +97,9 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
         >
           HNI & NRI Lifecycle Management
         </motion.div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-6 text-[11px] md:text-sm max-w-md mx-auto uppercase tracking-widest leading-relaxed mb-10"
-        >
+        <p className="mt-6 text-[11px] md:text-sm max-w-md mx-auto uppercase tracking-widest leading-relaxed mb-10 opacity-60">
           We handle everything. From Indian assets to global family sanctuaries.
-        </motion.p>
+        </p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

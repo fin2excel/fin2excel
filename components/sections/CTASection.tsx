@@ -11,21 +11,24 @@ export function CTASection() {
     <section ref={ref} className="relative py-20 md:py-24 px-6 md:px-10 text-swiss-bg overflow-hidden min-h-[70vh] flex items-center">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          poster=""
-        >
-          {/* Aerial city skyline at night — luxury financial feel */}
-          <source
-            src="https://videos.pexels.com/video-files/8814715/8814715-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
+        {inView ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            {/* Aerial city skyline at night — luxury financial feel */}
+            <source
+              src="https://videos.pexels.com/video-files/8814715/8814715-uhd_2560_1440_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+        ) : (
+          <div className="absolute inset-0 bg-swiss-black" />
+        )}
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/65" />
         {/* Gradient overlay for depth */}

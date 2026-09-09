@@ -80,7 +80,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5CD2FZG');`,
           }}
@@ -90,11 +90,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {/* Google global site tag (gtag.js) for AW-11248127603 & GA4 G-VJT4GY7KRF */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VJT4GY7KRF"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-gtag-config"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-11248127603');\ngtag('config', 'G-VJT4GY7KRF');`,
           }}
@@ -104,7 +104,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {/* Microsoft Clarity */}
         <Script
           id="microsoft-clarity"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

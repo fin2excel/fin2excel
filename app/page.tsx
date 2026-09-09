@@ -15,11 +15,9 @@ import { ServicesSection } from "@/components/sections/ServicesSection"
 import { ProcessSection } from "@/components/sections/ProcessSection"
 import { Skiper19 } from "@/components/ui/svg-follow-scroll"
 import { ParallaxTransition } from "@/components/sections/ParallaxTransition"
-import { Preloader } from "@/components/ui/preloader"
 import { Globe } from "@/components/cobe-globe"
 
 export default function LandingPage() {
-  const mounted = useIsClient()
   const [isDesktop, setIsDesktop] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
@@ -85,8 +83,7 @@ export default function LandingPage() {
 
   return (
     <div ref={containerRef} className="bg-swiss-bg text-swiss-black noise-bg font-sans min-h-screen">
-      {!mounted && <Preloader onComplete={() => {}} />}
-      <div className={mounted ? "visible" : "invisible"}>
+      <div>
         {/* Hero Section with its own sticky globe */}
         <div ref={heroRef} className="relative bg-swiss-bg z-10">
           <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pointer-events-none z-0">
