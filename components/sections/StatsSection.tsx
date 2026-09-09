@@ -12,10 +12,10 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { label: "Assets Managed", value: 450, prefix: "₹ ", suffix: " Cr +" },
-  { label: "Global Families", value: 120, suffix: " +" },
+  { label: "Assets Managed", value: 450, prefix: "₹\u00A0", suffix: "\u00A0CR\u00A0+" },
+  { label: "Global Families", value: 120, suffix: "\u00A0+" },
   { label: "Cities in India", value: 18, suffix: "" },
-  { label: "Expert Advisors", value: 25, suffix: " +" },
+  { label: "Expert Advisors", value: 25, suffix: "\u00A0+" },
 ]
 
 function AnimatedCounter({ value, prefix = "", suffix, inView }: { value: number, prefix?: string, suffix: string, inView: boolean }) {
@@ -44,7 +44,7 @@ function AnimatedCounter({ value, prefix = "", suffix, inView }: { value: number
     requestAnimationFrame(step)
   }, [inView, value])
 
-  return <span>{prefix}{count}{suffix}</span>
+  return <span className="whitespace-nowrap inline-block">{prefix}{count}{suffix}</span>
 }
 
 export function StatsSection() {
@@ -55,7 +55,7 @@ export function StatsSection() {
 
   return (
     <div ref={ref} className="py-16 md:py-24 border-b border-swiss-black/5 bg-transparent">
-      <dl className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 lg:grid-cols-4 gap-y-12 md:gap-y-16 gap-x-6 md:gap-x-10">
+      <dl className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 lg:grid-cols-4 gap-y-12 md:gap-y-16 gap-x-4 sm:gap-x-6 lg:gap-x-6 xl:gap-x-10">
         {stats.map((stat, i) => (
           <motion.div
             key={i}
@@ -67,7 +67,7 @@ export function StatsSection() {
             <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-bold group-hover:text-swiss-blue transition-colors duration-500">
               {stat.label}
             </dt>
-            <dd className="text-4xl md:text-6xl font-display font-bold tracking-tight text-swiss-black">
+            <dd className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-display font-bold tracking-tight text-swiss-black whitespace-nowrap">
               <AnimatedCounter
                 value={stat.value}
                 prefix={stat.prefix}
