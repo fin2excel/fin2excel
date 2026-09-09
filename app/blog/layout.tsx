@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'NRI Wealth, Tax & Property Journal',
-  description: 'Expert insights on FEMA regulations, NRI property sales, Section 195 TDS reduction, repatriation, inheritance laws, and cross-border wealth in India.',
+  title: 'Insights & Journal | Private Wealth & NRI Legal Guides',
+  description: 'Expert insights on Indian taxation, Section 195 Lower TDS Form 13, RBI 15CA/15CB repatriation, luxury real estate, and estate planning for global NRIs.',
   keywords: [
     'NRI tax blog',
     'FEMA updates 2026',
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
     canonical: 'https://www.fin2excel.com/blog',
   },
   openGraph: {
-    title: 'NRI Wealth, Tax & Property Journal | Fin2Excel Insights',
-    description: 'Expert insights on FEMA regulations, NRI property sales, Section 195 TDS reduction, repatriation, inheritance laws, and cross-border wealth in India.',
+    title: 'Insights & Journal | Private Wealth & NRI Legal Guides',
+    description: 'Expert insights on Indian taxation, Section 195 Lower TDS Form 13, RBI 15CA/15CB repatriation, luxury real estate, and estate planning for global NRIs.',
     url: 'https://www.fin2excel.com/blog',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NRI Wealth, Tax & Property Journal | Fin2Excel Insights',
-    description: 'Expert insights on FEMA regulations, NRI property sales, Section 195 TDS reduction, repatriation, inheritance laws, and cross-border wealth in India.',
+    title: 'Insights & Journal | Private Wealth & NRI Legal Guides',
+    description: 'Expert insights on Indian taxation, Section 195 Lower TDS Form 13, RBI 15CA/15CB repatriation, luxury real estate, and estate planning for global NRIs.',
   },
 };
 

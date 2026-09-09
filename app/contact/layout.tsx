@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Schedule a Private Consultation',
-  description: 'Book a private consultation with our principal advisors in Greater Kailash II, New Delhi. Rapid assistance for NRI property sales, tax compliance, and family concierge.',
+  title: 'Contact Us | Fin2Excel Private Advisory & Concierge',
+  description: "Connect with Fin2Excel advisors in Greater Kailash II, South Delhi. Schedule a private consultation for NRI property tax, fund repatriation, and elder care.",
   keywords: [
     'contact Fin2Excel',
     'NRI consultation Delhi',
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
     canonical: 'https://www.fin2excel.com/contact',
   },
   openGraph: {
-    title: 'Contact Us | Schedule a Private Consultation | Fin2Excel',
-    description: 'Book a private consultation with our principal advisors in Greater Kailash II, New Delhi. Rapid assistance for NRI property sales, tax compliance, and family concierge.',
+    title: 'Contact Us | Fin2Excel Private Advisory & Concierge',
+    description: "Connect with Fin2Excel advisors in Greater Kailash II, South Delhi. Schedule a private consultation for NRI property tax, fund repatriation, and elder care.",
     url: 'https://www.fin2excel.com/contact',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | Schedule a Private Consultation | Fin2Excel',
-    description: 'Book a private consultation with our principal advisors in Greater Kailash II, New Delhi. Rapid assistance for NRI property sales, tax compliance, and family concierge.',
+    title: 'Contact Us | Fin2Excel Private Advisory & Concierge',
+    description: "Connect with Fin2Excel advisors in Greater Kailash II, South Delhi. Schedule a private consultation for NRI property tax, fund repatriation, and elder care.",
   },
 };
 

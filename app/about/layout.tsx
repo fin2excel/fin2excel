@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Adv. Jag Mohan Kapoor & Private Advisory',
-  description: 'Learn about Fin2Excel and founding visionary Adv. Jag Mohan Kapoor. Providing high-level legal, tax litigation, and asset stewardship for global Indian families.',
+  title: 'About Fin2Excel | Private Financial Concierge & NRI Advisory',
+  description: "Discover Fin2Excel: South Delhi's premier advisory bridging cross-border tax, FEMA compliance, real estate stewardship, and wealth for global NRI families.",
   keywords: [
     'Adv. Jag Mohan Kapoor',
     'Fin2Excel founder',
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
     canonical: 'https://www.fin2excel.com/about',
   },
   openGraph: {
-    title: 'About Us | Adv. Jag Mohan Kapoor & Private Advisory | Fin2Excel',
-    description: 'Learn about Fin2Excel and founding visionary Adv. Jag Mohan Kapoor. Providing high-level legal, tax litigation, and asset stewardship for global Indian families.',
+    title: 'About Fin2Excel | Private Financial Concierge & NRI Advisory',
+    description: "Discover Fin2Excel: South Delhi's premier advisory bridging cross-border tax, FEMA compliance, real estate stewardship, and wealth for global NRI families.",
     url: 'https://www.fin2excel.com/about',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us | Adv. Jag Mohan Kapoor & Private Advisory | Fin2Excel',
-    description: 'Learn about Fin2Excel and founding visionary Adv. Jag Mohan Kapoor. Providing high-level legal, tax litigation, and asset stewardship for global Indian families.',
+    title: 'About Fin2Excel | Private Financial Concierge & NRI Advisory',
+    description: "Discover Fin2Excel: South Delhi's premier advisory bridging cross-border tax, FEMA compliance, real estate stewardship, and wealth for global NRI families.",
   },
 };
 

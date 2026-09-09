@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: 'Fin2Excel | Private Financial Concierge & NRI Advisory',
     template: '%s | Fin2Excel',
   },
-  description: 'India\'s premier private financial concierge for global families. Specialized in NRI property sale, Lower TDS (Form 13), repatriation & elder care in Delhi NCR.',
+  description: "India's premier private financial concierge for global families: NRI property sales, Lower TDS Form 13, fund repatriation, and elder care across Delhi NCR.",
   keywords: [
     'financial concierge',
     'HNI',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Fin2Excel | Private Financial Concierge',
-    description: 'India\'s premier private financial concierge for global families. Defining legacy through precision and absolute trust.',
+    title: 'Fin2Excel | Private Financial Concierge & NRI Advisory',
+    description: "India's premier private financial concierge for global families: NRI property sales, Lower TDS Form 13, fund repatriation, and elder care across Delhi NCR.",
     url: 'https://www.fin2excel.com',
     type: 'website',
     locale: 'en_IN',
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fin2Excel | Private Financial Concierge',
-    description: 'India\'s premier private financial concierge for global families.',
+    title: 'Fin2Excel | Private Financial Concierge & NRI Advisory',
+    description: "India's premier private financial concierge for global families: NRI property sales, Lower TDS Form 13, fund repatriation, and elder care across Delhi NCR.",
   },
   icons: {
     icon: '/assets/logo.png',

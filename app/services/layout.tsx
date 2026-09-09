@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { JsonLd } from '@/components/ui/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'NRI Advisory & Concierge Services',
-  description: 'Comprehensive NRI services in India: Lower TDS certificates (Form 13), 15CA/15CB repatriation, Delhi NCR property management, and fiduciary elder care for global Indian families.',
+  title: 'Bespoke NRI Services | Taxation, Legal, Property & Elder Care',
+  description: "Explore Fin2Excel bespoke NRI services: Lower TDS Form 13, 15CA/15CB repatriation, South Delhi property management, and 24/7 parent elder care in Delhi NCR.",
   keywords: [
     'NRI advisory services',
     'Lower TDS certificate Form 13',
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
     canonical: 'https://www.fin2excel.com/services',
   },
   openGraph: {
-    title: 'NRI Advisory & Concierge Services | Fin2Excel',
-    description: 'Comprehensive NRI services in India: Lower TDS certificates (Form 13), 15CA/15CB repatriation, Delhi NCR property management, and fiduciary elder care.',
+    title: 'Bespoke NRI Services | Taxation, Legal, Property & Elder Care',
+    description: "Explore Fin2Excel bespoke NRI services: Lower TDS Form 13, 15CA/15CB repatriation, South Delhi property management, and 24/7 parent elder care in Delhi NCR.",
     url: 'https://www.fin2excel.com/services',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NRI Advisory & Concierge Services | Fin2Excel',
-    description: 'Comprehensive NRI services in India: Lower TDS certificates (Form 13), 15CA/15CB repatriation, Delhi NCR property management, and fiduciary elder care.',
+    title: 'Bespoke NRI Services | Taxation, Legal, Property & Elder Care',
+    description: "Explore Fin2Excel bespoke NRI services: Lower TDS Form 13, 15CA/15CB repatriation, South Delhi property management, and 24/7 parent elder care in Delhi NCR.",
   },
 };
 

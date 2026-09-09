@@ -18,6 +18,7 @@ const fallbackPosts: Record<string, any> = {
   "silent-migration-global-indian-wealth": {
     title: "The Silent Migration: Why Global Indian Wealth is Shifting to Private Family Offices",
     subtitle: "Why traditional banking is failing the modern Indian diaspora and the rise of the concierge model.",
+    description: "Why modern Indian diaspora families are shifting from priority banking to private family offices for FEMA compliance, cross-border tax, and asset stewardship.",
     author: {
       name: "Adv. Jag Mohan Kapoor",
       role: "Founder & Managing Director",
@@ -63,6 +64,7 @@ const fallbackPosts: Record<string, any> = {
   "luxury-real-estate-outlook": {
     title: "The 2026 Luxury Real Estate Outlook: Tier-1 Cities vs. Heritage Retreats",
     subtitle: "Where the elite are placing their bets in the Indian property market this year.",
+    description: "Explore prime luxury property trends in India for 2026: Tier-1 metros vs heritage retreats, capital appreciation dynamics, and turnkey NRI asset management.",
     author: {
       name: "Sarah D'Souza",
       role: "Senior Real Estate Analyst",
@@ -95,6 +97,7 @@ const fallbackPosts: Record<string, any> = {
   "fema-amendments-nris": {
     title: "Navigating the New FEMA Amendments: What NRIs Need to Know",
     subtitle: "Simplifying the latest regulatory changes to ensure your cross-border investments remain seamless.",
+    description: "Understand the latest RBI FEMA amendments: repatriation limits, Form 15CA/15CB audit compliance, inheritance structuring, and cross-border capital transfers.",
     author: {
       name: "Adv. Rajesh Kumar",
       role: "Head of Legal & FEMA Compliance",
@@ -122,6 +125,7 @@ const fallbackPosts: Record<string, any> = {
   "art-financial-concierge": {
     title: "The Art of the Financial Concierge: Why Time is the Ultimate Asset",
     subtitle: "How delegating complex logistical and financial management creates a higher quality of life.",
+    description: "Discover how a private financial concierge eliminates cross-border friction, managing Indian tax, real estate, and family logistics with complete peace of mind.",
     author: {
       name: "Aditi Rao",
       role: "Private Client Relationship Lead",
@@ -145,6 +149,7 @@ const fallbackPosts: Record<string, any> = {
   "sustainable-philanthropy": {
     title: "Sustainable Philanthropy: Building a Legacy Beyond Returns",
     subtitle: "Strategic giving frameworks for Indian HNI families looking to create measurable social impact.",
+    description: "A strategic guide for global Indian families on establishing tax-exempt trusts (12A/80G) and FCRA-compliant cross-border charitable foundations in India.",
     author: {
       name: "Adv. Jag Mohan Kapoor",
       role: "Founder & Managing Director",
@@ -168,6 +173,7 @@ const fallbackPosts: Record<string, any> = {
   "nri-property-sale-lower-tds-form-13-guide": {
     title: "How NRIs Can Avoid 20% TDS on Property Sale in India: The Complete Form 13 Guide (2026)",
     subtitle: "A step-by-step legal walkthrough on obtaining a Nil or Lower TDS Certificate under Section 195 to protect your liquidity.",
+    description: "Avoid 20%+ TDS withholding on Indian real estate sales. Complete legal walkthrough on securing a Lower TDS Certificate (Form 13) under Section 195 on TRACES.",
     author: {
       name: "Adv. Jag Mohan Kapoor",
       role: "Founder & Managing Director",
@@ -223,6 +229,7 @@ const fallbackPosts: Record<string, any> = {
   "repatriate-nro-funds-15ca-15cb-guide": {
     title: "Step-by-Step Repatriation of Indian Property & Inheritance Proceeds: Form 15CA & 15CB Manual",
     subtitle: "How Non-Resident Indians can remit up to $1 Million USD annually from NRO to foreign bank accounts without regulatory friction.",
+    description: "Step-by-step manual for Non-Resident Indians to remit up to $1 Million USD annually from NRO accounts abroad using Form 15CA and Form 15CB CA certification.",
     author: {
       name: "Adv. Rajesh Kumar",
       role: "Head of Legal & FEMA Compliance",
@@ -264,8 +271,128 @@ const fallbackPosts: Record<string, any> = {
         If the funds originate from an inheritance rather than a personal property sale, the bank will require the registered Will, Succession Certificate, or Family Settlement Agreement alongside death certificates of the deceased property owners. Fin2Excel specializes in structuring inheritance remittances with complete legal verification.
       </p>
     `
+  },
+  "the-nri-wealth-playbook-2026-global-assets-and-indian-growth": {
+    title: "The NRI Wealth Playbook 2026: Global Assets & Indian Growth",
+    subtitle: "Balancing international capital allocation with high-growth Indian real estate and financial markets.",
+    description: "Master NRI wealth management in 2026: balance high-yield Indian assets, manage currency exposure, navigate FEMA compliance, and build generational prosperity.",
+    author: {
+      name: "Adv. Jag Mohan Kapoor",
+      role: "Founder & Managing Director",
+      avatar: "/assets/logo.png"
+    },
+    date: "September 08, 2026",
+    readTime: "9 min read",
+    category: "Wealth Strategy",
+    image: "/assets/hero-office.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        As macroeconomic conditions shift across North America, Europe, and the Middle East, High-Net-Worth Non-Resident Indians are rebalancing their portfolios towards high-yield Indian growth corridors while maintaining strict cross-border asset protection.
+      </p>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Multi-Jurisdiction Capital Stewardship</h2>
+      <p class="mb-6">
+        Successfully managing assets spread across Dubai, Singapore, London, and New Delhi requires integrated tax synchronization. Double Taxation Avoidance Agreements (DTAA) and foreign asset disclosure mandates mean uncoordinated advice creates significant regulatory exposure.
+      </p>
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "Global wealth preservation is built on jurisdictional agility and absolute regulatory compliance."
+      </blockquote>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Strategic Real Estate and Portfolio Reinvestment</h2>
+      <p class="mb-6">
+        Liquidating non-core assets to fund institutional-grade commercial real estate, REITs, or structured debt funds in India offers consistent yields while maintaining repatriation flexibility through RBI-compliant NRO channels.
+      </p>
+    `
+  },
+  "fueling-ambition-strategic-business-loans-for-the-2026-economy": {
+    title: "Fueling Ambition: Strategic Business Loans & Corporate Financing for 2026",
+    subtitle: "Tailored structured debt, working capital, and collateralized loan strategies for growing enterprises.",
+    description: "Scale your business with Fin2Excel's structured loan advisory. Tailored working capital, collateralized loans, and MSME funding solutions across Delhi NCR.",
+    author: {
+      name: "Fin2Excel Advisory Team",
+      role: "Corporate Finance Practice",
+      avatar: "/assets/logo.png"
+    },
+    date: "September 08, 2026",
+    readTime: "7 min read",
+    category: "Finance & Loans",
+    image: "/assets/global-network.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        Accessing institutional capital at competitive borrowing costs remains the single greatest accelerator for expanding mid-market companies, family enterprises, and MSMEs across Delhi NCR.
+      </p>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Navigating Structured Debt Options</h2>
+      <p class="mb-6">
+        From Loan Against Property (LAP) to unsecured working capital facilities and syndicated corporate credit lines, matching capital requirements to appropriate financial instruments prevents cash flow strain and ensures sustainable operational scaling.
+      </p>
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "Smart leverage is not about borrowing more; it is about structuring debt that respects your operating margins."
+      </blockquote>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Fin2Excel's Fiduciary Advantage</h2>
+      <p class="mb-6">
+        Unlike traditional loan agents who push quota-driven retail products, Fin2Excel negotiates directly with top-tier private banks and NBFC credit committees to secure favorable covenants, reduced processing charges, and optimized repayment schedules.
+      </p>
+    `
+  },
+  "the-surrogate-child-model-redefining-elder-care-in-india-for-2026": {
+    title: "The Surrogate Child Model: Redefining Elder Care in India for Global Families",
+    subtitle: "How dedicated fiduciary concierges in Delhi NCR act as trusted local proxies for NRI children abroad.",
+    description: "Fin2Excel's surrogate child model provides dedicated elder care in Delhi NCR. Fiduciary healthcare oversight, emergency response, and daily companionship.",
+    author: {
+      name: "Aditi Rao",
+      role: "Private Client Relationship Lead",
+      avatar: "/assets/logo.png"
+    },
+    date: "September 08, 2026",
+    readTime: "8 min read",
+    category: "Elder Care",
+    image: "/assets/hero-office.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        For millions of Non-Resident Indians living in the US, UK, Canada, and UAE, the greatest emotional anxiety is the day-to-day well-being, medical care, and legal security of their aging parents back home in Delhi NCR.
+      </p>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Beyond Commercial Nursing: Fiduciary Concierge</h2>
+      <p class="mb-6">
+        Traditional elder care agencies offer hourly attendants or clinical home visits, but lack the holistic oversight required to handle medical emergencies at Max Healthcare or Fortis, manage residential property maintenance, and protect elderly parents from financial vulnerability.
+      </p>
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "We do not merely provide care; we stand in as the family's trusted local surrogate child with professional accountability."
+      </blockquote>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Comprehensive Protocol</h2>
+      <p class="mb-6">
+        From 24/7 on-call emergency hospitalization coordination and doctor accompaniment to home safety audits and legal documentation, Fin2Excel delivers complete peace of mind to diaspora families worldwide.
+      </p>
+    `
+  },
+  "dubai-2027-the-rise-of-a-mature-global-real-estate-powerhouse": {
+    title: "Dubai 2027: The Rise of a Mature Global Real Estate Powerhouse",
+    subtitle: "Strategic analysis of the 2040 Urban Master Plan, tax-free yields, and capital allocation for NRI investors.",
+    description: "Strategic guide for NRI investors navigating Dubai's 2027 property market: 2040 Master Plan, Golden Visa avenues, capital growth corridors, and tax efficiency.",
+    author: {
+      name: "Sarah D'Souza",
+      role: "Senior Real Estate Analyst",
+      avatar: "/assets/logo.png"
+    },
+    date: "September 08, 2026",
+    readTime: "10 min read",
+    category: "Real Estate",
+    image: "/assets/global-network.png",
+    content: `
+      <p class="text-xl leading-relaxed mb-8">
+        Dubai has definitively transitioned from a speculative real estate trading hub into a deeply mature, institutional-grade global sanctuary for international capital, High-Net-Worth families, and corporate headquarters.
+      </p>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">Drivers of Sustained 2026–2027 Expansion</h2>
+      <p class="mb-6">
+        Driven by progressive visa regulations (10-Year Golden Visa), zero personal income tax, and transparent DLD escrow regulations, demand across prime districts like Palm Jumeirah, Downtown, and Dubai Hills Estate remains structurally resilient.
+      </p>
+      <blockquote class="border-l-4 border-swiss-blue pl-8 py-4 my-12 italic text-2xl font-serif text-swiss-black/80">
+        "Dubai offers the rare convergence of world-class infrastructure, dollar-pegged stability, and tax-exempt capital appreciation."
+      </blockquote>
+      <h2 class="text-3xl font-display font-bold mt-16 mb-6 uppercase tracking-tight">NRI Cross-Border Synergy</h2>
+      <p class="mb-6">
+        Indian HNIs increasingly utilize Dubai as their cross-border gateway—liquidating ancestral real estate in Delhi NCR under FEMA regulations and redeploying into high-yield Dubai commercial and residential assets.
+      </p>
+    `
   }
-}
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -299,7 +426,8 @@ export const dynamicParams = true;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  let post = fallbackPosts[resolvedParams.slug] || fallbackPosts["silent-migration-global-indian-wealth"];
+  const fallback = fallbackPosts[resolvedParams.slug] || fallbackPosts["silent-migration-global-indian-wealth"];
+  let post = { ...fallback };
 
   try {
     const res = await fetchAPI({ 
@@ -315,39 +443,46 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       const article = res.data[0];
       const seo = article.seo;
       
+      const rawDesc = seo?.metaDescription || article.excerpt;
+      const finalDesc = (rawDesc && rawDesc.trim().length >= 140) ? rawDesc.trim() : (fallback?.description || rawDesc || fallback?.subtitle);
+      
       post = {
         title: seo?.metaTitle || article.title,
-        description: seo?.metaDescription || article.excerpt,
-        keywords: seo?.keywords,
-        image: getStrapiMedia(article.seo?.metaImage?.url) || getStrapiMedia(article.cover?.url) || '/assets/hero-office.png',
-        author: { name: article.author?.name || 'Fin2Excel Team' },
+        description: finalDesc,
+        keywords: seo?.keywords || fallback?.keywords,
+        image: getStrapiMedia(article.seo?.metaImage?.url) || getStrapiMedia(article.cover?.url) || fallback?.image || '/assets/hero-office.png',
+        author: { name: article.author?.name || fallback?.author?.name || 'Fin2Excel Team' },
         robots: seo?.metaRobots || 'index, follow',
-        canonical: seo?.canonicalURL || `https://fin2excel.com/blog/${resolvedParams.slug}`
-      }
+        canonical: (seo?.canonicalURL ? seo.canonicalURL.replace('https://fin2excel.com', 'https://www.fin2excel.com') : `https://www.fin2excel.com/blog/${resolvedParams.slug}`)
+      };
     }
   } catch (e) {}
 
+  const postTitle = post.title || 'Private Wealth & NRI Advisory Insights';
+  const postDescription = post.description || post.subtitle || `${postTitle} - In-depth legal, taxation, and asset stewardship advisory for global NRI families by Fin2Excel.`;
+  const canonicalUrl = post.canonical || `https://www.fin2excel.com/blog/${resolvedParams.slug}`;
+
   return {
-    title: `${post.title} | Fin2Excel Insights`,
-    description: post.description,
+    title: `${postTitle} | Fin2Excel Insights`,
+    description: postDescription,
     keywords: post.keywords,
-    alternates: { canonical: post.canonical },
-    robots: post.robots,
+    alternates: { canonical: canonicalUrl },
+    robots: post.robots || { index: true, follow: true },
     openGraph: {
-      title: post.title,
-      description: post.description,
-      url: post.canonical,
+      title: `${postTitle} | Fin2Excel Insights`,
+      description: postDescription,
+      url: canonicalUrl,
       type: 'article',
-      authors: [post.author?.name],
-      images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
+      authors: [post.author?.name || 'Fin2Excel Private Advisory'],
+      images: [{ url: post.image || '/assets/hero-office.png', width: 1200, height: 630, alt: postTitle }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.description,
-      images: [post.image],
+      title: `${postTitle} | Fin2Excel Insights`,
+      description: postDescription,
+      images: [post.image || '/assets/hero-office.png'],
     }
-  }
+  };
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
