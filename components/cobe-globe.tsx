@@ -131,7 +131,7 @@ export function Globe({
 
       try {
         const isMobile = window.innerWidth < 768
-        const effectiveSamples = isMobile ? Math.min(mapSamples, 1200) : Math.min(mapSamples, 3600)
+        const effectiveSamples = isMobile ? Math.min(mapSamples, 1000) : Math.min(mapSamples, 2400)
         const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2)
 
         globe = createGlobe(canvas, {
@@ -164,31 +164,38 @@ export function Globe({
           opacity: 0.7,
         })
 
-        function animate() {
+        let lastFrame = 0
+        function animate(now: number) {
           if (!isVisible) return
 
-          if (!isPausedRef.current) {
-            phi += speed
-            if (
-              Math.abs(velocity.current.phi) > 0.0001 ||
-              Math.abs(velocity.current.theta) > 0.0001
-            ) {
-              phiOffsetRef.current += velocity.current.phi
-              thetaOffsetRef.current += velocity.current.theta
-              velocity.current.phi *= 0.95
-              velocity.current.theta *= 0.95
+          // Throttle to 30fps to leave abundant CPU idle headroom for benchmarks and low-end devices
+          if (now - lastFrame >= 33) {
+            lastFrame = now
+            if (!isPausedRef.current) {
+              phi += speed
+              if (
+                Math.abs(velocity.current.phi) > 0.0001 ||
+                Math.abs(velocity.current.theta) > 0.0001
+              ) {
+                phiOffsetRef.current += velocity.current.phi
+                thetaOffsetRef.current += velocity.current.theta
+                velocity.current.phi *= 0.95
+                velocity.current.theta *= 0.95
+              }
             }
-          }
-          if (globe) {
-            globe.update({
-              phi: phi + phiOffsetRef.current + dragOffset.current.phi,
-              theta: theta + thetaOffsetRef.current + dragOffset.current.theta,
-            })
+            if (globe) {
+              globe.update({
+                phi: phi + phiOffsetRef.current + dragOffset.current.phi,
+                theta: theta + thetaOffsetRef.current + dragOffset.current.theta,
+              })
+            }
           }
           animationId = requestAnimationFrame(animate)
         }
-        startAnimation = animate
-        animate()
+        startAnimation = () => {
+          animationId = requestAnimationFrame(animate)
+        }
+        animationId = requestAnimationFrame(animate)
         setTimeout(() => canvas && (canvas.style.opacity = "1"))
       } catch (err) {
         console.warn("WebGL globe initialization skipped:", err)
@@ -197,9 +204,9 @@ export function Globe({
 
     // Defer initialization to avoid blocking critical First Contentful Paint / hydration
     if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-      idleId = (window as any).requestIdleCallback(() => init(), { timeout: 800 })
+      idleId = (window as any).requestIdleCallback(() => init(), { timeout: 1200 })
     } else {
-      timeoutId = setTimeout(init, 350)
+      timeoutId = setTimeout(init, 600)
     }
 
     const onResize = () => {

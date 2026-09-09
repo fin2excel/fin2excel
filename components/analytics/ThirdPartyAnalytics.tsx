@@ -70,8 +70,8 @@ export function ThirdPartyAnalytics() {
     window.addEventListener('touchstart', loadScripts, { passive: true, once: true })
     window.addEventListener('keydown', loadScripts, { passive: true, once: true })
 
-    // Fallback: auto-load after 2.5s idle so even stationary visitors are logged
-    const idleTimer = setTimeout(loadScripts, 2500)
+    // Fallback: auto-load after 4.5s idle so even stationary visitors are logged
+    const idleTimer = setTimeout(loadScripts, 4500)
 
     return () => {
       clearTimeout(idleTimer)
