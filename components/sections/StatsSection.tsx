@@ -8,17 +8,30 @@ interface StatItem {
   label: string
   value: number
   prefix?: string
-  suffix: string
+  unit?: string
+  hasPlus?: boolean
 }
 
 const stats: StatItem[] = [
-  { label: "Assets Managed", value: 450, prefix: "₹\u00A0", suffix: "\u00A0CR\u00A0+" },
-  { label: "Global Families", value: 120, suffix: "\u00A0+" },
-  { label: "Cities in India", value: 18, suffix: "" },
-  { label: "Expert Advisors", value: 25, suffix: "\u00A0+" },
+  { label: "Assets Managed", value: 450, prefix: "₹", unit: "CR", hasPlus: true },
+  { label: "Global Families", value: 120, hasPlus: true },
+  { label: "Cities in India", value: 18 },
+  { label: "Expert Advisors", value: 25, hasPlus: true },
 ]
 
-function AnimatedCounter({ value, prefix = "", suffix, inView }: { value: number, prefix?: string, suffix: string, inView: boolean }) {
+function AnimatedCounter({ 
+  value, 
+  prefix = "", 
+  unit = "", 
+  hasPlus = false, 
+  inView 
+}: { 
+  value: number
+  prefix?: string
+  unit?: string
+  hasPlus?: boolean
+  inView: boolean 
+}) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
@@ -44,7 +57,18 @@ function AnimatedCounter({ value, prefix = "", suffix, inView }: { value: number
     requestAnimationFrame(step)
   }, [inView, value])
 
-  return <span className="whitespace-nowrap inline-block">{prefix}{count}{suffix}</span>
+  return (
+    <span className="whitespace-nowrap inline-flex items-baseline justify-center">
+      {prefix && <span className="mr-1.5 text-[0.85em] font-medium opacity-90">{prefix}</span>}
+      <span>{count}</span>
+      {unit && <span className="ml-1.5 text-[0.75em] font-semibold tracking-normal">{unit}</span>}
+      {hasPlus && (
+        <span className="ml-1 text-[0.55em] font-bold text-swiss-blue relative -top-[0.25em]">
+          +
+        </span>
+      )}
+    </span>
+  )
 }
 
 export function StatsSection() {
@@ -67,11 +91,12 @@ export function StatsSection() {
             <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-bold group-hover:text-swiss-blue transition-colors duration-500">
               {stat.label}
             </dt>
-            <dd className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-display font-bold tracking-tight text-swiss-black whitespace-nowrap">
+            <dd className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold tracking-tight text-swiss-black whitespace-nowrap">
               <AnimatedCounter
                 value={stat.value}
                 prefix={stat.prefix}
-                suffix={stat.suffix}
+                unit={stat.unit}
+                hasPlus={stat.hasPlus}
                 inView={inView}
               />
             </dd>
