@@ -16,51 +16,52 @@ export function CustomCursor() {
     const dot = dotRef.current;
     if (!dot) return;
 
-    const onMouseMove = (e: MouseEvent) => {
-      mouse.current = { x: e.clientX, y: e.clientY };
-    };
-
-    const onMouseEnterInteractive = () => {
-      dot.classList.add('hovering');
-    };
-
-    const onMouseLeaveInteractive = () => {
-      dot.classList.remove('hovering');
-    };
-
-    // Smooth animation loop
     let raf: number;
+    let isMoving = false;
+    let idleTimer: NodeJS.Timeout;
+
     const animate = () => {
-      // Smooth interpolation
-      dotPos.current.x += (mouse.current.x - dotPos.current.x) * 0.15;
-      dotPos.current.y += (mouse.current.y - dotPos.current.y) * 0.15;
+      dotPos.current.x += (mouse.current.x - dotPos.current.x) * 0.18;
+      dotPos.current.y += (mouse.current.y - dotPos.current.y) * 0.18;
 
       dot.style.transform = `translate(${dotPos.current.x}px, ${dotPos.current.y}px) translate(-50%, -50%)`;
 
-      raf = requestAnimationFrame(animate);
+      const dist = Math.hypot(mouse.current.x - dotPos.current.x, mouse.current.y - dotPos.current.y);
+      if (isMoving || dist > 0.5) {
+        raf = requestAnimationFrame(animate);
+      }
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouse.current = { x: e.clientX, y: e.clientY };
+      if (!isMoving) {
+        isMoving = true;
+        raf = requestAnimationFrame(animate);
+      }
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        isMoving = false;
+      }, 300);
+    };
+
+    // Single delegated listener for hover states instead of traversing all DOM nodes
+    const onMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && target.closest('a, button, [role="button"], input, textarea, select')) {
+        dot.classList.add('hovering');
+      } else {
+        dot.classList.remove('hovering');
+      }
     };
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
-
-    // Attach hover listeners to all interactive elements
-    const updateListeners = () => {
-      const interactives = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
-      interactives.forEach(el => {
-        el.addEventListener('mouseenter', onMouseEnterInteractive);
-        el.addEventListener('mouseleave', onMouseLeaveInteractive);
-      });
-    };
-
-    updateListeners();
-    // Re-run occasionally to catch dynamic elements
-    const interval = setInterval(updateListeners, 5000);
-
-    animate();
+    window.addEventListener('mouseover', onMouseOver, { passive: true });
 
     return () => {
       cancelAnimationFrame(raf);
-      clearInterval(interval);
+      clearTimeout(idleTimer);
       window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseover', onMouseOver);
     };
   }, []);
 

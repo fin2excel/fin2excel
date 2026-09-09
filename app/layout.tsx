@@ -1,5 +1,4 @@
 import type {Metadata} from 'next';
-import Script from 'next/script';
 import './globals.css'; 
 import { Navigation } from "@/components/sections/Navigation"
 import { Footer } from "@/components/sections/Footer"
@@ -9,6 +8,7 @@ import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { FloatingContact } from "@/components/ui/FloatingContact"
 import { JsonLd } from "@/components/ui/JsonLd"
 import { RenderWakeUp } from "@/components/ui/RenderWakeUp"
+import { ThirdPartyAnalytics } from "@/components/analytics/ThirdPartyAnalytics"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -77,45 +77,6 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="google-tag-manager"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5CD2FZG');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-
-        {/* Google global site tag (gtag.js) for AW-11248127603 & GA4 G-VJT4GY7KRF */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VJT4GY7KRF"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="google-gtag-config"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-11248127603');\ngtag('config', 'G-VJT4GY7KRF');`,
-          }}
-        />
-        {/* End Google global site tag */}
-
-        {/* Microsoft Clarity */}
-        <Script
-          id="microsoft-clarity"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "ydfv46b1r4");`,
-          }}
-        />
-        {/* End Microsoft Clarity */}
-      </head>
       <body className="antialiased bg-swiss-bg text-swiss-black noise-bg font-sans" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -252,6 +213,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Footer />
           <FloatingContact />
           <RenderWakeUp />
+          <ThirdPartyAnalytics />
           <Analytics />
           <SpeedInsights />
         </SmoothScroll>

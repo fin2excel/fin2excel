@@ -131,7 +131,7 @@ export function Globe({
 
       try {
         const isMobile = window.innerWidth < 768
-        const effectiveSamples = isMobile ? Math.min(mapSamples, 1200) : mapSamples
+        const effectiveSamples = isMobile ? Math.min(mapSamples, 1200) : Math.min(mapSamples, 3600)
         const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2)
 
         globe = createGlobe(canvas, {

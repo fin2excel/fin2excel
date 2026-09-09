@@ -6,9 +6,9 @@ import React, { forwardRef } from 'react';
 const SmoothScroll = forwardRef<HTMLElement, { children?: React.ReactNode }>((props, ref) => {
   return (
     <ReactLenis root>
-      <main ref={ref}>
+      <div ref={ref as any}>
         {props.children}
-      </main>
+      </div>
     </ReactLenis>
   );
 });
