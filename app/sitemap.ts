@@ -4,6 +4,10 @@ import { fetchAPI } from '@/lib/strapi'
 const fallbackPosts = [
   { slug: 'nri-property-sale-lower-tds-form-13-guide', updatedAt: '2026-09-06' },
   { slug: 'repatriate-nro-funds-15ca-15cb-guide', updatedAt: '2026-09-07' },
+  { slug: 'the-nri-wealth-playbook-2026-global-assets-and-indian-growth', updatedAt: '2026-09-08' },
+  { slug: 'fueling-ambition-strategic-business-loans-for-the-2026-economy', updatedAt: '2026-09-08' },
+  { slug: 'the-surrogate-child-model-redefining-elder-care-in-india-for-2026', updatedAt: '2026-09-08' },
+  { slug: 'dubai-2027-the-rise-of-a-mature-global-real-estate-powerhouse', updatedAt: '2026-09-08' },
   { slug: 'silent-migration-global-indian-wealth', updatedAt: '2026-05-12' },
   { slug: 'luxury-real-estate-outlook', updatedAt: '2026-05-10' },
   { slug: 'fema-amendments-nris', updatedAt: '2026-05-05' },

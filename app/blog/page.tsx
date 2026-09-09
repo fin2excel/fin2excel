@@ -116,6 +116,54 @@ const fallbackPosts = [
     author: "Adv. Rajesh Kumar",
     img: "/assets/service-legal.png",
     featured: false
+  },
+  {
+    id: 8,
+    slug: "the-nri-wealth-playbook-2026-global-assets-and-indian-growth",
+    category: "Wealth",
+    title: "The NRI Wealth Playbook 2026: Global Assets & Indian Growth",
+    excerpt: "Balancing international capital allocation with high-growth Indian real estate and financial markets under strict cross-border tax compliance.",
+    date: "September 08, 2026",
+    readTime: "9 min read",
+    author: "Adv. Jag Mohan Kapoor",
+    img: "/assets/hero-office.png",
+    featured: false
+  },
+  {
+    id: 9,
+    slug: "fueling-ambition-strategic-business-loans-for-the-2026-economy",
+    category: "Finance",
+    title: "Fueling Ambition: Strategic Business Loans & Corporate Financing for 2026",
+    excerpt: "Tailored structured debt, working capital, and collateralized loan strategies for growing enterprises and MSMEs across Delhi NCR.",
+    date: "September 08, 2026",
+    readTime: "7 min read",
+    author: "Fin2Excel Advisory Team",
+    img: "/assets/global-network.png",
+    featured: false
+  },
+  {
+    id: 10,
+    slug: "the-surrogate-child-model-redefining-elder-care-in-india-for-2026",
+    category: "Elder Care",
+    title: "The Surrogate Child Model: Redefining Elder Care in India for Global Families",
+    excerpt: "How dedicated fiduciary concierges in Delhi NCR act as trusted local proxies for NRI children abroad, managing medical and residential logistics.",
+    date: "September 08, 2026",
+    readTime: "8 min read",
+    author: "Aditi Rao",
+    img: "/assets/hero-office.png",
+    featured: false
+  },
+  {
+    id: 11,
+    slug: "dubai-2027-the-rise-of-a-mature-global-real-estate-powerhouse",
+    category: "Real Estate",
+    title: "Dubai 2027: The Rise of a Mature Global Real Estate Powerhouse",
+    excerpt: "Strategic analysis of the 2040 Urban Master Plan, tax-free yields, and capital allocation for NRI investors navigating UAE property.",
+    date: "September 08, 2026",
+    readTime: "10 min read",
+    author: "Sarah D'Souza",
+    img: "/assets/global-network.png",
+    featured: false
   }
 ]
 
