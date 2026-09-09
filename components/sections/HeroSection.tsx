@@ -96,7 +96,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
         >
           HNI & NRI Lifecycle Management
         </motion.div>
-        <p className="mt-6 text-[11px] md:text-sm max-w-md mx-auto uppercase tracking-widest leading-relaxed mb-10 opacity-60">
+        <p className="mt-6 text-[11px] md:text-sm max-w-md mx-auto uppercase tracking-widest leading-relaxed mb-10 opacity-60 min-h-[2.5rem]">
           We handle everything. From Indian assets to global family sanctuaries.
         </p>
 

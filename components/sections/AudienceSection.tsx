@@ -79,9 +79,9 @@ export function AudienceSection() {
               >
                 <span className="text-sm font-display text-swiss-blue font-medium mt-1">{item.number}</span>
                 <div>
-                  <h4 className="text-xl mb-2 uppercase font-display tracking-tight group-hover/item:text-swiss-blue transition-colors duration-300">
+                  <h3 className="text-xl mb-2 uppercase font-display tracking-tight group-hover/item:text-swiss-blue transition-colors duration-300">
                     {item.title}
-                  </h4>
+                  </h3>
                   <p className="text-swiss-dark-gray text-sm leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>

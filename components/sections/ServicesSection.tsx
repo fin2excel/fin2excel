@@ -113,7 +113,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                   <div className="flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-[1px] bg-swiss-blue" />
-                      <span className="text-[10px] tracking-[0.4em] uppercase font-medium text-swiss-muted">
+                      <span className="text-[10px] tracking-[0.4em] uppercase font-semibold text-swiss-black/70">
                         Service 0{index + 1}
                       </span>
                     </div>
@@ -122,7 +122,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       {service.title}
                     </h3>
                     
-                    <p className="text-swiss-dark-gray text-base md:text-lg leading-relaxed mb-8">
+                    <p className="text-swiss-black/80 text-base md:text-lg leading-relaxed mb-8">
                       {service.desc}
                     </p>
 

@@ -136,7 +136,7 @@ export default function TestimonialsEditorial() {
             key={`cat-${active}`}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="inline-block px-3 py-1 bg-swiss-blue/5 border border-swiss-blue/10 text-[10px] tracking-[0.3em] uppercase font-bold text-swiss-blue mb-8"
+            className="inline-block px-3 py-1 bg-swiss-blue/10 border border-swiss-blue/20 text-[10px] tracking-[0.3em] uppercase font-bold text-swiss-blue-dark mb-8"
           >
             {current.category}
           </motion.div>
@@ -177,10 +177,10 @@ export default function TestimonialsEditorial() {
               </div>
               <div>
                 <p className="font-display font-bold text-lg uppercase tracking-tight text-swiss-black">{current.author}</p>
-                <p className="text-xs text-swiss-dark-gray uppercase tracking-widest font-medium">
+                <p className="text-xs text-swiss-black/70 uppercase tracking-widest font-medium">
                   {current.role}
-                  <span className="mx-3 text-swiss-black/10">|</span>
-                  <span className="text-swiss-blue">{current.company}</span>
+                  <span className="mx-3 text-swiss-black/20">|</span>
+                  <span className="text-swiss-blue-dark font-semibold">{current.company}</span>
                 </p>
               </div>
             </div>
@@ -209,8 +209,8 @@ export default function TestimonialsEditorial() {
               </button>
             ))}
           </div>
-          <span className="text-[10px] font-bold text-swiss-dark-gray tracking-[0.4em] uppercase">
-            {String(active + 1).padStart(2, "0")} <span className="text-swiss-black/20 mx-1">/</span> {String(testimonials.length).padStart(2, "0")}
+          <span className="text-[10px] font-bold text-swiss-black/70 tracking-[0.4em] uppercase">
+            {String(active + 1).padStart(2, "0")} <span className="text-swiss-black/40 mx-1">/</span> {String(testimonials.length).padStart(2, "0")}
           </span>
         </div>
 
