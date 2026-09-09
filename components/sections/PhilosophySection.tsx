@@ -80,7 +80,7 @@ export function PhilosophySection() {
           <span className="italic text-swiss-blue">That follows</span> <br />
           the Scroll.
         </h2>
-        <p className="text-swiss-dark-gray uppercase tracking-widest text-xs font-bold">
+        <p className="text-swiss-dark-gray uppercase tracking-widest text-xs font-medium">
           Precision in Indian asset management.
         </p>
       </motion.div>
@@ -94,7 +94,7 @@ export function PhilosophySection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-[10px] tracking-[0.4em] text-swiss-blue font-bold">{pillar.number}</span>
+            <span className="text-[10px] tracking-[0.4em] text-swiss-blue font-medium">{pillar.number}</span>
             <h3 className="text-lg font-display uppercase tracking-tight group-hover:text-swiss-blue transition-colors duration-500">
               {pillar.title}
             </h3>

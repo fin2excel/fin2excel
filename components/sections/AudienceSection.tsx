@@ -51,7 +51,7 @@ export function AudienceSection() {
         {/* Content */}
         <div className="space-y-10">
           <motion.p 
-            className="text-[10px] tracking-[0.6em] uppercase font-bold text-swiss-blue"
+            className="text-[10px] tracking-[0.6em] uppercase font-medium text-swiss-blue"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -77,7 +77,7 @@ export function AudienceSection() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-sm font-display text-swiss-blue font-bold mt-1">{item.number}</span>
+                <span className="text-sm font-display text-swiss-blue font-medium mt-1">{item.number}</span>
                 <div>
                   <h4 className="text-xl mb-2 uppercase font-display tracking-tight group-hover/item:text-swiss-blue transition-colors duration-300">
                     {item.title}

@@ -48,8 +48,8 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
             />
           </div>
           <div className="mt-4 space-y-1">
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-40">Featured Service</p>
-            <p className="text-sm font-display font-bold uppercase tracking-tight">Legacy Wealth Advisory</p>
+            <p className="text-[10px] font-medium tracking-[0.2em] uppercase opacity-40">Featured Service</p>
+            <p className="text-sm font-display font-semibold uppercase tracking-tight">Legacy Wealth Advisory</p>
           </div>
         </div>
       </motion.div>
@@ -78,21 +78,21 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
             />
           </div>
           <div className="mt-3">
-            <p className="text-[9px] font-bold tracking-[0.1em] uppercase opacity-60">Indian Assets Management</p>
+            <p className="text-[9px] font-medium tracking-[0.1em] uppercase opacity-60">Indian Assets Management</p>
           </div>
         </div>
       </motion.div>
 
       <motion.div style={{ y: textY }} className="relative z-20 text-center flex flex-col items-center">
         <EchoText 
-          text="FIN2EXCEL" 
-          className="text-7xl md:text-9xl lg:text-[11rem] xl:text-[13rem] font-display font-bold leading-[0.8]"
+          text="FIN2excel" 
+          className="text-7xl md:text-9xl lg:text-[11rem] xl:text-[13rem] font-display font-semibold leading-[0.8]"
         />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="mt-12 text-[10px] md:text-xs tracking-[0.6em] uppercase font-bold text-swiss-black"
+          className="mt-12 text-[10px] md:text-xs tracking-[0.6em] uppercase font-medium text-swiss-black"
         >
           HNI & NRI Lifecycle Management
         </motion.div>
@@ -108,7 +108,7 @@ export function HeroSection({ globeOpacity, globeScale, globeY, textY }: HeroSec
         >
           <a 
             href="/contact"
-            className="group relative px-12 py-5 bg-swiss-black text-swiss-bg rounded-sm text-[10px] font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-swiss-blue/20 inline-block w-fit"
+            className="group relative px-12 py-5 bg-swiss-black text-swiss-bg rounded-sm text-[10px] font-medium tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-swiss-blue/20 inline-block w-fit"
           >
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
               Initiate Journey

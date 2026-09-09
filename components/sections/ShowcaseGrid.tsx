@@ -24,7 +24,7 @@ export function ShowcaseGrid() {
               className="object-cover grayscale-hover"
             />
             <div className="absolute bottom-10 left-10 text-white z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-              <p className="text-[10px] tracking-widest font-bold uppercase">Estate Management</p>
+              <p className="text-[10px] tracking-widest font-medium uppercase">Estate Management</p>
             </div>
           </motion.div>
 

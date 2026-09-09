@@ -88,10 +88,10 @@ export function StatsSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-bold group-hover:text-swiss-blue transition-colors duration-500">
+            <dt className="text-[10px] tracking-[0.4em] uppercase text-swiss-dark-gray font-medium group-hover:text-swiss-blue transition-colors duration-500">
               {stat.label}
             </dt>
-            <dd className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold tracking-tight text-swiss-black whitespace-nowrap">
+            <dd className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-semibold tracking-tight text-swiss-black whitespace-nowrap">
               <AnimatedCounter
                 value={stat.value}
                 prefix={stat.prefix}

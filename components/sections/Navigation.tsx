@@ -51,13 +51,13 @@ export function Navigation() {
               className="object-contain"
             />
           </div>
-          <span className="font-display text-2xl font-bold tracking-tighter hover:text-swiss-blue transition-colors duration-300">
-            FIN2EXCEL
+          <span className="font-display text-2xl font-semibold tracking-tighter hover:text-swiss-blue transition-colors duration-300">
+            FIN2excel
           </span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex gap-10 text-[11px] font-bold tracking-[0.2em] uppercase">
+        <div className="hidden lg:flex gap-10 text-[11px] font-medium tracking-[0.2em] uppercase">
           {navLinks.map((link) => (
             <Link 
               key={link.label}
@@ -81,7 +81,7 @@ export function Navigation() {
         <div className="flex items-center gap-4">
           <Link 
             href="/contact"
-            className="hidden md:block px-6 py-2.5 border border-swiss-black rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-swiss-black hover:text-swiss-bg transition-all duration-300"
+            className="hidden md:block px-6 py-2.5 border border-swiss-black rounded-sm text-[10px] font-medium tracking-[0.2em] uppercase hover:bg-swiss-black hover:text-swiss-bg transition-all duration-300"
           >
             Book Consultation
           </Link>
@@ -132,7 +132,7 @@ export function Navigation() {
               >
                 <Link
                   href={link.href}
-                  className={`text-4xl font-display font-bold uppercase tracking-tighter transition-colors ${
+                  className={`text-4xl font-display font-semibold uppercase tracking-tighter transition-colors ${
                     pathname === link.href ? "text-swiss-blue" : "hover:text-swiss-blue"
                   }`}
                   onClick={() => setMobileOpen(false)}
@@ -149,7 +149,7 @@ export function Navigation() {
             >
               <Link 
                 href="/contact"
-                className="mt-8 px-10 py-4 bg-swiss-black text-swiss-bg rounded-sm text-xs font-bold tracking-[0.3em] uppercase block"
+                className="mt-8 px-10 py-4 bg-swiss-black text-swiss-bg rounded-sm text-xs font-medium tracking-[0.3em] uppercase block"
                 onClick={() => setMobileOpen(false)}
               >
                 Book Consultation

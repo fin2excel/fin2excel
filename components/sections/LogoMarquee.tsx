@@ -25,7 +25,7 @@ export function LogoMarquee() {
             <div className="mx-auto max-w-7xl px-6">
                 <div className="flex flex-col items-center md:flex-row gap-12">
                     <div className="flex-shrink-0 text-center md:text-left md:max-w-[200px] md:border-r md:border-swiss-black/10 md:pr-12">
-                        <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-swiss-black/30 leading-relaxed">
+                        <p className="text-[10px] tracking-[0.3em] uppercase font-medium text-swiss-black/30 leading-relaxed">
                             Trusted Global <br /> Financial Partners
                         </p>
                     </div>

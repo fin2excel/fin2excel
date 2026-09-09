@@ -96,6 +96,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
         <link
           rel="preload"
+          href="/fonts/ClashDisplay-Semibold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
           href="/fonts/Satoshi-Bold.woff2"
           as="font"
           type="font/woff2"

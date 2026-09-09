@@ -54,14 +54,14 @@ const AnimatedHeader = () => {
         className={`transition-all duration-700 ease-out ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         style={{ transformStyle: 'preserve-3d' }}
       >
-        <h2 className="text-5xl md:text-8xl uppercase font-display font-bold leading-[0.85] tracking-tighter text-swiss-black">
+        <h2 className="text-5xl md:text-8xl uppercase font-display font-semibold leading-[0.85] tracking-tighter text-swiss-black">
           Core <br /> <span className="text-swiss-muted/30 italic">Services</span>
         </h2>
         <div className="mt-8 w-24 h-[2px] bg-swiss-blue" />
       </div>
       <p 
         ref={pRef}
-        className={`text-swiss-dark-gray max-w-xs text-sm leading-relaxed uppercase tracking-[0.3em] font-bold mt-6 transition-all duration-700 ease-out delay-200 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`text-swiss-dark-gray max-w-xs text-sm leading-relaxed uppercase tracking-[0.3em] font-medium mt-6 transition-all duration-700 ease-out delay-200 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         style={{ transformStyle: 'preserve-3d' }}
       >
         Surgical Precision. <br /> Absolute Delegation.
@@ -113,12 +113,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                   <div className="flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-[1px] bg-swiss-blue" />
-                      <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-swiss-muted">
+                      <span className="text-[10px] tracking-[0.4em] uppercase font-medium text-swiss-muted">
                         Service 0{index + 1}
                       </span>
                     </div>
 
-                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 text-swiss-black uppercase leading-[1.1]">
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 text-swiss-black uppercase leading-[1.1]">
                       {service.title}
                     </h3>
                     
@@ -128,7 +128,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 
                     <a 
                       href="/services"
-                      className="group relative flex items-center justify-center gap-4 text-[10px] font-bold tracking-[0.4em] uppercase py-4 px-8 border border-swiss-black rounded-sm overflow-hidden transition-all duration-500 w-fit"
+                      className="group relative flex items-center justify-center gap-4 text-[10px] font-medium tracking-[0.4em] uppercase py-4 px-8 border border-swiss-black rounded-sm overflow-hidden transition-all duration-500 w-fit"
                     >
                       <span className="relative z-10 group-hover:text-white transition-colors duration-500">Explore</span>
                       <div className="absolute inset-0 bg-swiss-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />

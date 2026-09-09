@@ -38,7 +38,7 @@ export function ProcessSection() {
     <section ref={containerRef} className={`py-24 px-6 relative bg-swiss-bg overflow-hidden transition-opacity duration-500 ${isClient ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24">
-          <p className="text-[10px] tracking-[0.6em] uppercase font-bold text-swiss-blue mb-4">The Lifecycle</p>
+          <p className="text-[10px] tracking-[0.6em] uppercase font-medium text-swiss-blue mb-4">The Lifecycle</p>
           <h2 className="text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
             How we <br /> handle it.
           </h2>
@@ -91,10 +91,10 @@ function StepItem({ step, index }: { step: any, index: number }) {
       className="flex flex-col items-center text-center relative z-10"
     >
       <div className="w-16 h-16 rounded-full bg-white border border-swiss-black/5 flex items-center justify-center mb-8 shadow-sm group hover:border-swiss-blue transition-colors duration-500">
-        <span className="text-xl font-display font-bold text-swiss-blue">{step.number}</span>
+        <span className="text-xl font-display font-medium text-swiss-blue">{step.number}</span>
       </div>
       
-      <h3 className="text-4xl md:text-6xl uppercase font-bold tracking-tighter mb-4">
+      <h3 className="text-4xl md:text-6xl uppercase font-semibold tracking-tighter mb-4">
         {step.title}
       </h3>
       <p className="text-swiss-dark-gray text-lg md:text-xl max-w-md mx-auto leading-relaxed">

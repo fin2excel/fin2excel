@@ -55,7 +55,7 @@ export function CTASection() {
         />
 
         <motion.p
-          className="text-[10px] tracking-[0.6em] uppercase text-swiss-blue font-bold mb-10"
+          className="text-[10px] tracking-[0.6em] uppercase text-swiss-blue font-medium mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -74,7 +74,7 @@ export function CTASection() {
         </motion.h2>
 
         <motion.p
-          className="text-white/70 text-sm md:text-base max-w-lg mx-auto uppercase tracking-[0.2em] font-bold mb-14"
+          className="text-white/70 text-sm md:text-base max-w-lg mx-auto uppercase tracking-[0.2em] font-medium mb-14"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -90,7 +90,7 @@ export function CTASection() {
         >
           <a 
             href="/contact"
-            className="group relative px-14 py-6 bg-transparent border border-swiss-blue/40 text-swiss-bg rounded-sm text-xs font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-swiss-blue backdrop-blur-sm block w-fit"
+            className="group relative px-14 py-6 bg-transparent border border-swiss-blue/40 text-swiss-bg rounded-sm text-xs font-medium tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-swiss-blue backdrop-blur-sm block w-fit"
           >
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
               Start Your Journey

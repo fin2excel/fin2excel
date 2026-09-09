@@ -37,7 +37,7 @@ export function Footer() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="font-display text-2xl font-bold tracking-tighter">FIN2EXCEL</h3>
+              <h3 className="font-display text-2xl font-semibold tracking-tighter">FIN2excel</h3>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
               India&apos;s premier private financial concierge for global families and high-net-worth individuals.
@@ -107,7 +107,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-bold mb-6">Key Services</p>
+            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-medium mb-6">Key Services</p>
             <ul className="space-y-3">
               {[
                 { name: "Lower TDS Form 13", href: "/services/lower-tds-certificate-form-13" },
@@ -125,7 +125,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-bold mb-6">Company</p>
+            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-medium mb-6">Company</p>
             <ul className="space-y-3">
               {[
                 { name: "About Us", href: "/about" },
@@ -142,7 +142,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-bold mb-6">Contact</p>
+            <p className="text-[10px] tracking-[0.4em] uppercase text-swiss-blue font-medium mb-6">Contact</p>
             <div className="space-y-3 text-sm">
               <a href="mailto:info@fin2excel.com" className="block text-white/40 hover:text-white transition-colors duration-300">
                 info@fin2excel.com
