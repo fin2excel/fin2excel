@@ -9,3 +9,10 @@
   will-change: transform;
   transform: translateZ(0);
 }
+
+@media (max-width: 767px) {
+  .globe-canvas {
+    touch-action: pan-y;
+    pointer-events: none;
+  }
+}

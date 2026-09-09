@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform, useSpring } from "motion/react"
-import { Globe } from "@/components/cobe-globe"
 
 import Link from "next/link"
 

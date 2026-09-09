@@ -18,20 +18,8 @@ import { ParallaxTransition } from "@/components/sections/ParallaxTransition"
 import { Globe } from "@/components/cobe-globe"
 
 export default function LandingPage() {
-  const [isDesktop, setIsDesktop] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
-  
-  useEffect(() => {
-    // Only run on client
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768)
-    
-    // Set initial value
-    handleResize()
-    
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
 
   const services = [
     {
@@ -89,9 +77,9 @@ export default function LandingPage() {
           <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pointer-events-none z-0">
             <motion.div 
               style={{ opacity: globeOpacity, scale: globeScale, y: globeY }}
-              className="w-[100vw] md:w-[70vw] h-[100vw] md:h-[70vw] absolute hidden md:block"
+              className="w-[90vw] max-w-[480px] md:max-w-none md:w-[70vw] h-[90vw] max-h-[480px] md:max-h-none md:h-[70vw] aspect-square absolute"
             >
-              {isDesktop && <Globe />}
+              <Globe />
             </motion.div>
           </div>
 

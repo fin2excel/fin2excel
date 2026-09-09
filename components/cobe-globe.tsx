@@ -121,72 +121,96 @@ export function Globe({
     let isVisible = true
     let startAnimation: (() => void) | null = null
 
-    // Check WebGL availability before initializing
+    let idleId: number | null = null
+    let timeoutId: NodeJS.Timeout | null = null
 
     function init() {
+      if (!canvasRef.current || globe) return
       const width = canvas.offsetWidth
-      if (width === 0 || globe) return
+      if (width === 0) return
 
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      globe = createGlobe(canvas, {
-        devicePixelRatio: dpr,
-        width,
-        height: width,
-        phi: 0,
-        theta,
-        dark,
-        diffuse,
-        mapSamples,
-        mapBrightness,
-        baseColor,
-        markerColor,
-        glowColor,
-        markerElevation,
-        markers: markers.map((m) => ({
-          location: m.location,
-          size: markerSize,
-          id: m.id,
-        })),
-        arcs: arcs.map((a) => ({
-          from: a.from,
-          to: a.to,
-          id: a.id,
-        })),
-        arcColor,
-        arcWidth,
-        arcHeight,
-        opacity: 0.7,
-      })
+      try {
+        const isMobile = window.innerWidth < 768
+        const effectiveSamples = isMobile ? Math.min(mapSamples, 1200) : mapSamples
+        const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2)
 
-      function animate() {
-        if (!isVisible) return
+        globe = createGlobe(canvas, {
+          devicePixelRatio: dpr,
+          width,
+          height: width,
+          phi: 0,
+          theta,
+          dark,
+          diffuse,
+          mapSamples: effectiveSamples,
+          mapBrightness,
+          baseColor,
+          markerColor,
+          glowColor,
+          markerElevation,
+          markers: markers.map((m) => ({
+            location: m.location,
+            size: markerSize,
+            id: m.id,
+          })),
+          arcs: arcs.map((a) => ({
+            from: a.from,
+            to: a.to,
+            id: a.id,
+          })),
+          arcColor,
+          arcWidth,
+          arcHeight,
+          opacity: 0.7,
+        })
 
-        if (!isPausedRef.current) {
-          phi += speed
-          if (
-            Math.abs(velocity.current.phi) > 0.0001 ||
-            Math.abs(velocity.current.theta) > 0.0001
-          ) {
-            phiOffsetRef.current += velocity.current.phi
-            thetaOffsetRef.current += velocity.current.theta
-            velocity.current.phi *= 0.95
-            velocity.current.theta *= 0.95
+        function animate() {
+          if (!isVisible) return
+
+          if (!isPausedRef.current) {
+            phi += speed
+            if (
+              Math.abs(velocity.current.phi) > 0.0001 ||
+              Math.abs(velocity.current.theta) > 0.0001
+            ) {
+              phiOffsetRef.current += velocity.current.phi
+              thetaOffsetRef.current += velocity.current.theta
+              velocity.current.phi *= 0.95
+              velocity.current.theta *= 0.95
+            }
           }
+          if (globe) {
+            globe.update({
+              phi: phi + phiOffsetRef.current + dragOffset.current.phi,
+              theta: theta + thetaOffsetRef.current + dragOffset.current.theta,
+            })
+          }
+          animationId = requestAnimationFrame(animate)
         }
-        if (globe) {
-          globe.update({
-            phi: phi + phiOffsetRef.current + dragOffset.current.phi,
-            theta: theta + thetaOffsetRef.current + dragOffset.current.theta,
-          })
-        }
-        animationId = requestAnimationFrame(animate)
+        startAnimation = animate
+        animate()
+        setTimeout(() => canvas && (canvas.style.opacity = "1"))
+      } catch (err) {
+        console.warn("WebGL globe initialization skipped:", err)
       }
-      startAnimation = animate
-      animate()
-      setTimeout(() => canvas && (canvas.style.opacity = "1"))
     }
 
-    init()
+    // Defer initialization to avoid blocking critical First Contentful Paint / hydration
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = (window as any).requestIdleCallback(() => init(), { timeout: 800 })
+    } else {
+      timeoutId = setTimeout(init, 350)
+    }
+
+    const onResize = () => {
+      if (canvas && globe) {
+        const width = canvas.offsetWidth
+        if (width > 0) {
+          globe.update({ width, height: width })
+        }
+      }
+    }
+    window.addEventListener("resize", onResize)
 
     // Pause rendering when scrolled off-screen
     const observer = new IntersectionObserver(
@@ -202,7 +226,12 @@ export function Globe({
     observer.observe(canvas)
 
     return () => {
+      window.removeEventListener("resize", onResize)
       observer.disconnect()
+      if (idleId && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        (window as any).cancelIdleCallback(idleId)
+      }
+      if (timeoutId) clearTimeout(timeoutId)
       if (animationId) cancelAnimationFrame(animationId)
       if (globe) {
         try { globe.destroy() } catch { /* ignore cleanup errors */ }

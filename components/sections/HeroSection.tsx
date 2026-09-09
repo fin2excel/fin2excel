@@ -3,7 +3,6 @@
 import { motion, MotionValue, useTransform } from "motion/react"
 import Image from "next/image"
 import { EchoText } from "@/components/echo-text"
-import { Globe } from "@/components/cobe-globe"
 import React, { useEffect, useState } from "react"
 import { useIsClient } from "@/hooks/use-is-client"
 
