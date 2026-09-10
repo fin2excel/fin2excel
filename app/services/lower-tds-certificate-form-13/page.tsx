@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { JsonLd } from "@/components/ui/JsonLd"
+import { CrossServiceBanner } from "@/components/sections/CrossServiceBanner"
 
 export const metadata: Metadata = {
   title: "Lower TDS Certificate for NRI Property Sale | Form 13 & Section 195",
@@ -257,9 +258,9 @@ export default function LowerTdsPage() {
         <div className="space-y-6 max-w-4xl">
           {faqSchema.mainEntity.map((faq) => (
             <div key={faq.name} className="p-8 bg-white border border-swiss-black/5">
-              <h4 className="text-lg md:text-xl font-display font-bold uppercase tracking-tight mb-3">
+              <h3 className="text-lg md:text-xl font-display font-semibold uppercase tracking-tight mb-3">
                 {faq.name}
-              </h4>
+              </h3>
               <p className="text-sm md:text-base text-swiss-dark-gray leading-relaxed">
                 {faq.acceptedAnswer.text}
               </p>
@@ -269,9 +270,9 @@ export default function LowerTdsPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-10 text-center">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-10 text-center mb-24">
         <div className="py-20 border-y border-swiss-black/10">
-          <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-6">
+          <h2 className="text-4xl md:text-6xl font-display font-semibold uppercase tracking-tight mb-6">
             Selling Property in India Soon?
           </h2>
           <p className="text-lg text-swiss-dark-gray max-w-xl mx-auto mb-10">
@@ -282,13 +283,16 @@ export default function LowerTdsPage() {
               href="https://wa.me/919560759494?text=Hi%20Fin2Excel%2C%20I%20would%20like%20to%20evaluate%20my%20Form%2013%20TDS%20reduction%20eligibility."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-swiss-blue text-white rounded-sm text-xs font-bold tracking-[0.3em] uppercase hover:bg-swiss-black transition-colors"
+              className="px-10 py-4 bg-swiss-blue text-white rounded-sm text-xs font-semibold tracking-[0.3em] uppercase hover:bg-swiss-black transition-colors shadow-lg"
             >
               Get Free Case Evaluation
             </a>
           </div>
         </div>
       </section>
+
+      {/* Cross-Service Fiduciary Ecosystem */}
+      <CrossServiceBanner currentServiceId="lower-tds" />
     </div>
   )
 }
