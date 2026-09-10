@@ -426,8 +426,8 @@ export const dynamicParams = true;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const fallback = fallbackPosts[resolvedParams.slug] || fallbackPosts["silent-migration-global-indian-wealth"];
-  let post = { ...fallback };
+  const fallback = fallbackPosts[resolvedParams.slug];
+  let post: any = fallback ? { ...fallback } : null;
 
   try {
     const res = await fetchAPI({ 
@@ -457,6 +457,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       };
     }
   } catch (e) {}
+
+  if (!post) {
+    return {
+      title: 'Article Not Found | Fin2Excel',
+      robots: { index: false, follow: false },
+    };
+  }
 
   const rawPostTitle = post.title || 'Private Wealth & NRI Advisory Insights';
   const cleanTitle = rawPostTitle.replace(/\s*\|\s*Fin2Excel(\s*Insights)?/gi, '').trim();
@@ -491,36 +498,43 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogPostPage({ params }: PageProps) {
   const resolvedParams = await params;
-  let post = fallbackPosts[resolvedParams.slug] || fallbackPosts["silent-migration-global-indian-wealth"];
+  let post = fallbackPosts[resolvedParams.slug] ? { ...fallbackPosts[resolvedParams.slug] } : null;
 
-  try {
-    const res = await fetchAPI({ 
-      endpoint: 'articles', 
-      query: { 
-        'filters[slug][$eq]': resolvedParams.slug,
-        'populate': '*'
-      },
-      options: { timeout: 25000 } // Higher timeout to allow Render container startup
-    });
-    
-    if (res?.data?.length > 0) {
-      const article = res.data[0];
-      post = {
-        title: article.title,
-        subtitle: article.excerpt,
-        content: article.content,
-        category: article.category?.name || "Wealth Strategy",
-        date: new Date(article.publishedAt || article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-        readTime: `${article.readTime || 8} min read`,
-        image: getStrapiMedia(article.cover?.url) || '/assets/hero-office.png',
-        author: {
-          name: article.author?.name || "Fin2Excel Team",
-          role: article.author?.role || "Contributor",
-          avatar: getStrapiMedia(article.author?.avatar?.url) || '/assets/logo.png'
-        }
-      };
-    }
-  } catch (e) {}
+  if (!post) {
+    try {
+      const res = await fetchAPI({ 
+        endpoint: 'articles', 
+        query: { 
+          'filters[slug][$eq]': resolvedParams.slug,
+          'populate': '*'
+        },
+        options: { timeout: 25000 } // Higher timeout to allow Render container startup
+      });
+      
+      if (res?.data?.length > 0) {
+        const article = res.data[0];
+        post = {
+          title: article.title,
+          subtitle: article.excerpt,
+          content: article.content,
+          category: article.category?.name || "Wealth Strategy",
+          date: new Date(article.publishedAt || article.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+          readTime: `${article.readTime || 8} min read`,
+          image: getStrapiMedia(article.cover?.url) || '/assets/hero-office.png',
+          author: {
+            name: article.author?.name || "Fin2Excel Team",
+            role: article.author?.role || "Contributor",
+            avatar: getStrapiMedia(article.author?.avatar?.url) || '/assets/logo.png'
+          }
+        };
+      }
+    } catch (e) {}
+  }
+
+  // If the article is neither in the core pillars nor in Strapi, return a genuine 404
+  if (!post) {
+    notFound();
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
